@@ -39,8 +39,8 @@ const Testimonials = [
 const Testimonial = ({ title }) => {
   return (
     <div className="flex flex-col items-center w-full  sm:px-10 lg:p-10  font-plus-jakarta-sans ">
-      <h1 className="text-2xl font-semibold leading-10 text-center mb-8">
-        {title}
+      <h1 className="text-4xl font-semibold leading-10 text-center mb-8 lg:text-4xl lg:leading-[60px] text-green-950 capitalize">
+        {(title = "our clients testimonials")}
       </h1>
 
       <Swiper

@@ -7,6 +7,7 @@ import Stats from "./Stats";
 import EventServices from "./EventServices";
 import Companieslogo from "./Companieslogo";
 import CTASections from "./CTASections";
+import Workflow from "./workflow";
 const Homepage = () => {
   return (
     <div>
@@ -17,6 +18,7 @@ const Homepage = () => {
       <CTASections />
       <Stats />
       <Testimonial />
+      <Workflow />
     </div>
   );
 };

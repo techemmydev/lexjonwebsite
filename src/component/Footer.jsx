@@ -11,7 +11,7 @@ import Button from "./Button";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#222222] text-white py-10 px-6 sm:px-10 lg:px-20 font-plus-jakarta-sans">
+    <footer className="bg-green-950 text-white py-10 px-6 sm:px-10 lg:px-20 font-plus-jakarta-sans">
       <div className="max-w-7xl mx-auto grid gap-10 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
         {/* Logo and Description */}
         <div className="col-span-1">
