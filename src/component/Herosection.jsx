@@ -6,6 +6,7 @@ import logo from "../assets/logo/calogo.png"; // Adjust the path as necessary
 import Button from "./Button";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import heroimage from "../assets/logo/Heroimage.jpg"; // Adjust the path as necessary
 import { ReactTyped } from "react-typed";
 const navigation = [
   { label: "Home", path: "/" },
@@ -30,7 +31,10 @@ export default function Herosection() {
     AOS.refresh();
   }, []);
   return (
-    <div className="bg-white font-plus-jakarta-sans">
+    <div
+      className={`font-plus-jakarta-sans bg-cover bg-center bg-no-repeat `}
+      style={{ backgroundImage: `url(${heroimage})` }}
+    >
       <header className="sticky top-0 z-50 bg-white shadow">
         <nav
           aria-label="Global"
@@ -57,7 +61,7 @@ export default function Herosection() {
               <Link
                 key={item.label}
                 to={item.path}
-                className={`-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold  ${
+                className={`-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold ${
                   isActive(item.path)
                     ? "text-green-900 font-extrabold"
                     : "text-black hover:text-green-800"
@@ -73,6 +77,7 @@ export default function Herosection() {
             </Link>
           </div>
         </nav>
+
         <Dialog
           open={mobileMenuOpen}
           onClose={setMobileMenuOpen}
@@ -105,7 +110,7 @@ export default function Herosection() {
                     <Link
                       key={item.label}
                       to={item.path}
-                      className={`-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold  hover:bg-gray-50  ${
+                      className={`-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50 ${
                         isActive(item.path)
                           ? "text-[red] font-extrabold"
                           : "text-black hover:text-sky-700"
@@ -129,21 +134,16 @@ export default function Herosection() {
         </Dialog>
       </header>
 
+      {/* Hero Section with dark overlay */}
       <div className="relative isolate px-6 pt-14 lg:px-8 bg-cover bg-center">
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black opacity-80 z-0"></div>
+
         <div
-          aria-hidden="true"
-          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          className="relative z-10 mx-auto max-w-2xl lg:py-25 py-10"
+          data-aos="fade-left"
         >
-          <div
-            style={{
-              clipPath:
-                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-            }}
-            className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"
-          />
-        </div>
-        <div className="mx-auto max-w-2xl lg:py-25 py-10 " data-aos="fade-left">
-          <div className="text-center ">
+          <div className="text-center text-white">
             <ReactTyped
               strings={[
                 "Transforming Digital Solutions for a Smarter Future",
@@ -158,14 +158,10 @@ export default function Herosection() {
               loop
               showCursor
               cursorChar="|"
-              className=" sm:block text-xl sm:text-2xl lg:text-4xl font-bold leading-tight font-plus-jakarta-sans"
+              className="sm:block text-xl sm:text-2xl lg:text-4xl font-bold leading-tight font-plus-jakarta-sans"
             />
-
-            {/* <h1 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
-              Transforming Digital Solutions for a Smarter Future
-            </h1> */}
             <p
-              className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+              className="mt-8 text-lg font-medium text-pretty text-gray-200 sm:text-xl/8"
               data-aos="fade-left"
             >
               Leading the way in software development, digital marketing, and
@@ -173,22 +169,18 @@ export default function Herosection() {
               businesses and educational institutions.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button className=" bg-[#faad29d6] text-white text-xs py-3 px-5 hover:bg-[#b37b1e] font-plus-jakarta-sans font-bold cursor-pointer">
+              <Button className="bg-[#faad29d6] text-white text-xs py-3 px-5 hover:bg-[#b37b1e] font-plus-jakarta-sans font-bold cursor-pointer">
                 Get in touch
               </Button>
               <Link
                 to="#"
-                className="text-sm/6 font-semibold text-gray-900 border border-[#faad29d6] px-4 py-2 rounded-lg  transition-colors"
+                className="text-sm/6 font-semibold text-white border border-[#faad29d6] px-4 py-2 rounded-lg transition-colors"
               >
                 Learn more <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
         </div>
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0  -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-        ></div>
       </div>
     </div>
   );
