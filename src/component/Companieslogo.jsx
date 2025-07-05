@@ -22,18 +22,18 @@ const ArrayOfLogos = [
 
 const Companieslogo = () => {
   return (
-    <div className="w-full mx-auto px-4 sm:px-0 font-plus-jakarta-sans">
+    <div className="w-full mx-auto px-4 lg:p-10 sm:px-0 font-plus-jakarta-sans">
       <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-10 sm:gap-24">
         {/* Text Block */}
         <div className="w-full sm:w-[318px] sm:h-[130px] sm:mb-20">
           <h1 className="text-xl sm:text-2xl font-semibold leading-8 sm:leading-10 py-3 sm:py-5">
-            6.3k trusted companies
+            Trusted by 6,300+ global companies
           </h1>
           <p className="text-sm sm:text-xs font-normal leading-6 text-[#88918B]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo alias
-            tenetur debitis illum nulla. Ea illum nisi asperiores laboriosam
-            molestias sit. Perferendis dolor tempore accusamus ducimus et quasi
-            nesciunt quo!
+            From fast-growing startups to Fortune 500 enterprises, our digital
+            solutions power the infrastructure of businesses across finance,
+            health, logistics, and beyond. Our partnerships are built on
+            results, trust, and tech that scales.
           </p>
         </div>
 
@@ -58,11 +58,11 @@ const Companieslogo = () => {
                 key={index}
                 className="flex justify-center items-center"
               >
-                <div className="w-[120px] sm:w-[150px] h-[60px] sm:h-[75px] flex items-center justify-center shadow-md bg-white  rounded mb-15 sm:mb-10">
+                <div className="w-[120px] sm:w-[150px] h-[60px] sm:h-[75px] flex items-center justify-center shadow-md bg-white rounded mb-15 sm:mb-10">
                   <img
                     src={item.img}
-                    alt=""
-                    className="w-[80px] sm:w-[100px] object-contain "
+                    alt={`Logo ${index + 1}`}
+                    className="w-[80px] sm:w-[100px] object-contain"
                   />
                 </div>
               </SwiperSlide>

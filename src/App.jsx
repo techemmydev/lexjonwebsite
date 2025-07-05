@@ -1,9 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Routes, Route } from "react-router";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
-import Homepage from "./component/Homepage";
+import Homepage from "./pages/Homepage";
 import Layout from "./layouts/Layout";
 import "./App.css";
+import Aboutpage from "./pages/Aboutpage";
+
+import PagenotFound from "./pages/PagenotFound";
+
+import ServicePage from "./pages/ServicePage";
+import CareerPage from "./pages/CareerPage";
+import Contactpage from "./pages/ContactPage";
 
 const App = () => {
   const [scrollDirection, setScrollDirection] = useState("down");
@@ -45,7 +52,14 @@ const App = () => {
       <div>
         <Routes>
           <Route path="/" element={<Layout />}>
+            <Route path="*" element={<PagenotFound />} />
             <Route index element={<Homepage />} />
+            <Route path="/aboutus" element={<Aboutpage />} />
+            <Route path="/contact" element={<Contactpage />} />
+            {/* Add more routes here */}
+            <Route path="/services" element={<ServicePage />} />
+            <Route path="/career" element={<CareerPage />} />
+            {/* Add more routes here */}
           </Route>
         </Routes>
       </div>

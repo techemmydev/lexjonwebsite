@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import CountUp from "react-countup";
-import { useInView } from "react-intersection-observer"; // Import Intersection Observer
+import { useInView } from "react-intersection-observer";
 
 const stats = [
-  { id: 1, name: "Successful Events Hosted", value: 1200 },
-  { id: 2, name: "Happy Clients", value: 5000 },
-  { id: 3, name: "Venues Available", value: 1 },
+  { id: 1, name: "Projects Deployed", value: 350 },
+  { id: 2, name: "Active Users", value: 12500 },
+  { id: 3, name: "Client Organizations", value: 220 },
 ];
 
 export default function Stats() {
@@ -16,8 +16,11 @@ export default function Stats() {
   }, []);
 
   return (
-    <div className="bg-white py-20 sm:py-32 lg:py-19">
+    <div className="bg-white py-20 sm:py-32 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8" data-aos="fade-up">
+        <h1 className="text-3xl font-bold text-center text-gray-800 mb-16 uppercase tracking-wide font-plus-jakarta-sans">
+          Our Impact in the Digital World
+        </h1>
         <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
           {stats.map((stat) => {
             const { ref, inView } = useInView({ triggerOnce: true });
