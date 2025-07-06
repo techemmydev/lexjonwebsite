@@ -27,7 +27,7 @@ export default function Navbar() {
       >
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
-            <img src={logo} alt="Logo" className="h-12 w-auto" />
+            <img src={logo} alt="Logo" className="h-16 w-auto" />
           </Link>
         </div>
 
@@ -37,7 +37,7 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(true)}
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
           >
-            <Bars3Icon className="h-6 w-6" />
+            <Bars3Icon className="h-16 w-16" />
           </button>
         </div>
 
@@ -77,14 +77,14 @@ export default function Navbar() {
               className="-m-1.5 p-1.5"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <img src={logo} alt="Logo" className="h-10 w-auto" />
+              <img src={logo} alt="Logo" className="h-16 w-auto" />
             </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
             >
-              <XMarkIcon className="h-6 w-6" />
+              <XMarkIcon className="h-16 w-16" />
             </button>
           </div>
           <div className="mt-6 space-y-2">
@@ -93,7 +93,7 @@ export default function Navbar() {
                 key={item.label}
                 to={item.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block rounded-lg px-3 py-2 text-base font-semibold ${
+                className={`block rounded-lg px-3 py-6 text-2xl font-semibold ${
                   isActive(item.path)
                     ? "text-white bg-green-900 font-extrabold"
                     : "text-white hover:text-green-700"
@@ -105,7 +105,7 @@ export default function Navbar() {
             <Link
               to="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="block rounded-lg px-3 py-2 text-base font-semibold text-white hover:text-green-700"
+              className="block rounded-lg px-3 py-2 text-2xl font-semibold text-white hover:text-green-700"
             >
               Get in touch
             </Link>

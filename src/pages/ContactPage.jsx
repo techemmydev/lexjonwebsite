@@ -6,6 +6,9 @@ import "aos/dist/aos.css";
 import imagee1 from "../assets/img/callgril.png";
 import imagee2 from "../assets/img/call.png";
 import imagee3 from "../assets/img/chat_bubble.png";
+// email logo fro
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
@@ -15,21 +18,34 @@ const customerData = [
     paragraph:
       "Interested in LexJon software solutions? Call our sales team and let's talk business.",
     image: imagee2,
-    button: "Contact Sales",
+    button: "+234 906 381 4899",
   },
+
   {
-    head: "Customer Support",
-    paragraph:
-      "Our support team is here to help with any product issues or general questions you may have.",
-    image: imagee3,
-    button: "Get Support",
-  },
-  {
-    head: "Live Chat",
+    head: "Email Us",
     paragraph:
       "Chat with our team for quick responses and real-time assistance on any inquiries.",
     image: imagee3,
-    button: "Start Chat",
+    button: "www.lexjon@eschool.ng",
+  },
+  {
+    head: "Social Media",
+    paragraph:
+      "Our support team is here to help with any product issues or general questions you may have.",
+    image: imagee3,
+    myicons: [
+      {
+        label: "Facebook",
+        href: "https://facebook.com/caglobaldigitalcompany",
+        icon: <FaFacebookF className="h-5 w-5" />,
+      },
+      {
+        label: "Instagram",
+        href: "https://instagram.com/caglobalsltd",
+        icon: <FaInstagram className="h-5 w-5" />,
+      },
+    ],
+    button: "Follow Us",
   },
 ];
 
@@ -99,9 +115,27 @@ const ContactPage = () => {
                     <div className="text-xs text-text-color text-center mb-4">
                       {items.paragraph}
                     </div>
-                    <Button className="bg-green-900 text-white text-[15px] py-3 px-5 hover:bg-green-800 font-plus-jakarta-sans font-bold w-[266px]">
-                      {items.button}
-                    </Button>
+                    {index === 2 && items.myicons && (
+                      <div className="flex gap-4 mb-4">
+                        {items.myicons.map((iconItem, i) => (
+                          <a
+                            key={i}
+                            href={iconItem.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-green-900 hover:underline flex items-center gap-1"
+                          >
+                            {iconItem.icon}
+                            <span className="text-sm">{iconItem.label}</span>
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                    {index !== 2 && (
+                      <Button className="bg-green-900 text-white text-[15px] py-3 px-5 hover:bg-green-800 font-plus-jakarta-sans font-bold w-[266px]">
+                        {items.button}
+                      </Button>
+                    )}
                   </div>
                 </SwiperSlide>
               ))}
@@ -129,9 +163,29 @@ const ContactPage = () => {
                 <div className="text-xs text-text-color text-center mb-4">
                   {items.paragraph}
                 </div>
-                <Button className=" text-white text-[15px] py-3 px-5 hover:bg-[#90e784d6] font-plus-jakarta-sans font-bold w-[266px] bg-green-950">
-                  See all open positions
-                </Button>
+                {/* Conditionally render social media icons if index === 2 */}
+                {index === 2 && items.myicons && (
+                  <div className="flex gap-4 mb-4">
+                    {items.myicons.map((iconItem, i) => (
+                      <a
+                        key={i}
+                        href={iconItem.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-green-900 hover:underline flex items-center gap-1"
+                      >
+                        {iconItem.icon}
+                        <span className="text-sm">{iconItem.label}</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
+                {index !== 2 && (
+                  <Button className="bg-green-900 text-white text-[15px] py-3 px-5 hover:bg-green-800 font-plus-jakarta-sans font-bold w-[266px]">
+                    {items.button}
+                  </Button>
+                )}
+                {/* Render button for all items (or conditionally if needed) */}
               </div>
             ))}
           </div>
