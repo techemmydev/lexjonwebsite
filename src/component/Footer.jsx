@@ -47,7 +47,7 @@ const Footer = () => {
         {/* Services */}
         <div>
           <h3 className="font-semibold text-lg mb-3">SERVICES</h3>
-          <ul className="text-sm space-y-2 text-gray-300">
+          <ul className="text-[17px] space-y-2 text-gray-300 lg:text-sm">
             <li>Web Design/Development</li>
             <li>Digital Marketing</li>
             <li>Software Development</li>
@@ -60,7 +60,7 @@ const Footer = () => {
         {/* Quick Links */}
         <div>
           <h3 className="font-semibold text-lg mb-3">QUICK LINKS</h3>
-          <ul className="text-sm space-y-2 text-gray-300">
+          <ul className="text-[17px] space-y-2 text-gray-300 lg:text-sm">
             <li>Home</li>
             <li>About</li>
             <li>Contact</li>
@@ -73,7 +73,7 @@ const Footer = () => {
         {/* Support */}
         <div>
           <h3 className="font-semibold text-lg mb-3">SUPPORT</h3>
-          <ul className="text-sm space-y-2 text-gray-300">
+          <ul className="text-[17px] space-y-2 text-gray-300 lg:text-sm">
             <li>Help Center</li>
             <li>FAQs</li>
             <li>Terms & Condition</li>
@@ -84,7 +84,7 @@ const Footer = () => {
         {/* Newsletter */}
         <div>
           <h3 className="font-semibold text-lg mb-3">Newsletter</h3>
-          <p className="text-sm text-gray-300 mb-4">
+          <p className="text-[17px] space-y-2 text-gray-300 lg:text-sm mb-4">
             Subscribe to our newsletter.
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center ">
@@ -103,7 +103,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Text */}
-      <div className="mt-10 text-center text-sm text-gray-400 border-t border-gray-700 pt-6">
+      <div className="mt-10 text-center  text-gray-400 border-t border-gray-700 pt-6     text-[17px]  lg:text-sm">
         © 2025 LEXJON Technologies. All rights reserved
       </div>
     </footer>

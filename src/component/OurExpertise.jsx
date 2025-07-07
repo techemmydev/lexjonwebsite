@@ -23,7 +23,7 @@ const OurExpertise = () => {
           const { img, body, name, arrow } = item;
           return (
             <SwiperSlide key={index}>
-              <div className="max-w-[270px] w-full h-auto p-5 flex flex-col justify-center lg:gap-4 bg-green-900 text-white rounded-xl shadow-lg transform transition duration-300 hover:scale-105 mx-auto mb-12 group">
+              <div className="max-w-[350px] w-full h-auto p-5 flex flex-col justify-center lg:gap-4 bg-green-900 text-white rounded-xl shadow-lg transform transition duration-300 hover:scale-105 mx-auto mb-12 group">
                 <div className="flex items-center gap-5">
                   <img src={img} alt={name} className="w-9 h-9" />
                   <h1 className="text-sm sm:text-base font-semibold lg:text-[15px]">
