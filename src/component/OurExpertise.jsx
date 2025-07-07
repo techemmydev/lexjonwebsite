@@ -23,7 +23,7 @@ const OurExpertise = () => {
           const { img, body, name, arrow } = item;
           return (
             <SwiperSlide key={index}>
-              <div className="max-w-[350px] w-full h-auto p-5 flex flex-col justify-center lg:gap-4 bg-green-900 text-white rounded-xl shadow-lg transform transition duration-300 hover:scale-105 mx-auto mb-12 group">
+              <div className="w-full sm:w-[90%] h-auto p-5 flex flex-col justify-center gap-4 bg-green-900 text-white rounded-xl shadow-lg transform transition duration-300 hover:scale-105 mx-auto mb-12 group">
                 <div className="flex items-center gap-5">
                   <img src={img} alt={name} className="w-9 h-9" />
                   <h1 className="text-sm sm:text-base font-semibold lg:text-[15px]">
@@ -31,11 +31,9 @@ const OurExpertise = () => {
                   </h1>
                 </div>
                 <div className="flex flex-col gap-3">
-                  <p className="lg:text-[12px] sm:text-sm text-white font-light">
-                    {body}
-                  </p>
-                  <p className="text-white flex gap-1 items-center text-xs sm:text-sm font-bold hover:underline cursor-pointer">
-                    Learn More{" "}
+                  <p className="text-sm font-light">{body}</p>
+                  <p className="flex gap-1 items-center text-xs sm:text-sm font-bold hover:underline cursor-pointer">
+                    Learn More
                     <img src={arrow} alt="arrow icon" className="w-3 h-3" />
                   </p>
                 </div>
