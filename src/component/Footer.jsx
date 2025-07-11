@@ -8,6 +8,15 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import Button from "./Button";
+import { Link } from "react-router";
+const navigation = [
+  { label: "Home", path: "/" },
+  { label: "About", path: "/aboutus" },
+  { label: "Services", path: "/services" },
+  { label: "Products", path: "/product" },
+  { label: "Careers", path: "/careers" },
+  { label: "Contact", path: "/contact" },
+];
 
 const Footer = () => {
   return (
@@ -25,22 +34,39 @@ const Footer = () => {
             Aliquam rhoncus ligula eu eros pellentesque consequat nec donec
             mattis odio.
           </p>
-          <div className="flex gap-3 mt-4">
-            <span className="w-9 h-9 rounded-md bg-[#F3C037] shadow-md flex justify-center items-center hover:bg-orange-400 transition">
-              <FaFacebookF className="text-white" />
-            </span>
-            <span className="w-9 h-9 rounded-md bg-[#F3C037] shadow-md flex justify-center items-center hover:bg-orange-400 transition">
-              <FaInstagram className="text-white" />
-            </span>
-            <span className="w-9 h-9 rounded-md bg-[#F3C037] shadow-md flex justify-center items-center hover:bg-orange-400 transition">
-              <FaLinkedinIn className="text-white" />
-            </span>
-            <span className="w-9 h-9 rounded-md bg-[#F3C037] shadow-md flex justify-center items-center hover:bg-orange-400 transition">
-              <FaTwitter className="text-white" />
-            </span>
-            <span className="w-9 h-9 rounded-md bg-[#F3C037]  shadow-md flex justify-center items-center hover:bg-orange-400 transition">
-              <FaYoutube className="text-white" />
-            </span>
+          <div className="flex gap-4 mt-6">
+            <a
+              href="https://facebook.com/yourpage"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition"
+            >
+              <FaFacebookF size={20} />
+            </a>
+            <a
+              href="https://twitter.com/yourhandle"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition"
+            >
+              <FaTwitter size={20} />
+            </a>
+            <a
+              href="https://linkedin.com/in/yourprofile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition"
+            >
+              <FaLinkedinIn size={20} />
+            </a>
+            <a
+              href="https://instagram.com/yourprofile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition"
+            >
+              <FaInstagram size={20} />
+            </a>
           </div>
         </div>
 
@@ -58,15 +84,17 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
+        {/* Quick Links */}
         <div>
           <h3 className="font-semibold text-lg mb-3">QUICK LINKS</h3>
           <ul className="text-[17px] space-y-2 text-gray-300 lg:text-sm">
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-            <li>Product</li>
-            <li>Service</li>
-            <li>Career</li>
+            {navigation.map((item, index) => (
+              <li key={index}>
+                <Link to={item.path} className="hover:text-white transition">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 

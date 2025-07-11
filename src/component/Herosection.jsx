@@ -37,9 +37,11 @@ export default function HeroSection() {
           development to marketing — we do it all.
         </p>
         <div className="mt-10 flex justify-center gap-4">
-          <Button className="bg-[#faad29d6] text-white px-5 py-3 text-sm font-bold hover:bg-[#b37b1e]">
-            Get in touch
-          </Button>
+          <Link to="/contact">
+            <Button className="bg-[#faad29d6] text-white px-5 py-3 text-sm font-bold hover:bg-[#b37b1e]">
+              Get in touch
+            </Button>
+          </Link>
           <Link
             to="/aboutus"
             className="text-sm font-semibold text-white border border-[#faad29d6] px-4 py-2 rounded-lg hover:bg-[#faad29]"

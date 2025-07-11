@@ -9,8 +9,9 @@ import Aboutpage from "./pages/Aboutpage";
 import PagenotFound from "./pages/PagenotFound";
 
 import ServicePage from "./pages/ServicePage";
-import CareerPage from "./pages/CareerPage";
+import CareerPage from "./pages/CarrerPage";
 import Contactpage from "./pages/ContactPage";
+import Products from "./pages/Products";
 
 const App = () => {
   const [scrollDirection, setScrollDirection] = useState("down");
@@ -58,8 +59,8 @@ const App = () => {
             <Route path="/contact" element={<Contactpage />} />
             {/* Add more routes here */}
             <Route path="/services" element={<ServicePage />} />
-            <Route path="/career" element={<CareerPage />} />
-            {/* Add more routes here */}
+            <Route path="/careers" element={<CareerPage />} />
+            <Route path="/product" element={<Products />} />
           </Route>
         </Routes>
       </div>
