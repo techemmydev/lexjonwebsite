@@ -47,9 +47,13 @@ const Herosection = () => {
                 className="text-text-color text-sm sm:text-base leading-6 text-[#88918B] font-light lg:text-[14px]"
                 data-aos="fade-left"
               >
-                Leading the way in software development, digital marketing, and
-                digital education. We create innovative solutions that empower
-                businesses and educational institutions.
+                Welcome to{" "}
+                <b style={{ color: "#faad29", fontWeight: "bold" }}>
+                  CA Global Digital Company Ltd
+                </b>
+                , your partner in innovation. We deliver smart software
+                solutions, expert IT consulting, and hands-on robotics education
+                for startups and enterprises alike.
               </p>
               <Button className="text-white w-[150px] py-4 text-xs font-plus-jakarta-sans bg-[#FAAD29] hover:bg-[#faad29d6] font-bold capitalize cursor-pointer">
                 Get in touch
@@ -116,8 +120,8 @@ const Herosection = () => {
               className="text-text-color text-sm sm:text-base leading-6 text-[#88918B] font-light lg:text-[14px]"
               data-aos="fade-down"
             >
-              Get a demo to learn about our premium software, or get started
-              with our full suite of free tools and upgrade as you grow.
+              Explore our services and discover how we can help you grow,
+              optimize, and innovate.
             </p>
 
             {/* CTA Buttons */}
