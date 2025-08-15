@@ -1,26 +1,26 @@
 import React, { useRef, useEffect, useState } from "react";
 import AOS from "aos";
-
+import { ReactTyped } from "react-typed";
+import ServiceImg from "../assets/img/serviceImg1.png";
 import "aos/dist/aos.css";
 import Mission from "../component/Mission";
 import "swiper/css";
 import "swiper/css/pagination";
-import CountUp from "react-countup";
+// import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import Companies from "@/component/Companieslogo";
 import WhyChooseUs from "../component/WhyChooseUs";
 import TeamSection from "../component/TeamMember";
 import { Gem, Target, ThumbsUp } from "lucide-react";
 import Stats from "../component/Stats";
+import WhyWorkWithUs from "@/component/WhyworkWithus";
+import OurDivisions from "@/component/OurDivision";
+// import AboutUs from "@/component/AboutusContemt";
+import AboutusContemtW from "@/component/AboutusContemt";
 // import TeamSection from "../components/TeamSection";
 
 const links = [{ name: "Meet the Team", href: "#" }];
 
-const stats = [
-  { name: "Events Hosted", value: 1200 },
-  { name: "Happy Clients", value: 5000 },
-  { name: "Years in Service", value: 5 },
-  { name: "Venue Capacity", value: 500 },
-];
 const tabs = [
   {
     label: "Our Edge",
@@ -32,13 +32,13 @@ const tabs = [
     label: "Mission",
     icon: <Target className="w-6 h-6 mr-2" />,
     content:
-      "We aim to create unforgettable experiences by offering beautiful venues and comprehensive event planning services tailored to our clients' needs. Your satisfaction is our priority.",
+      "To deliver world-class digital solutions, education, and creative services that empower people and transform businesses.",
   },
   {
     label: "Vision",
     icon: <ThumbsUp className="w-6 h-6 mr-2" />,
     content:
-      "We believe in customer satisfaction, quality, integrity, and creativity. These values guide us in every event we host, ensuring a unique and memorable experience for our clients.",
+      "To be the leading digital innovation and creative marketing service providers in Africa",
   },
 ];
 const Aboutpage = () => {
@@ -57,69 +57,65 @@ const Aboutpage = () => {
 
   return (
     <>
-      <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 font-plus-jakarta-sans">
-        <img
-          alt="Digital technology background"
-          src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTl8fHRlY2h8ZW58MHx8MHx8fDA%3D"
-          className="absolute inset-0 -z-10 size-full  bg-cover bg-center bg-no-repeat "
-        />
-        <div className="absolute inset-0 bg-black/90 -z-10"></div>{" "}
-        {/* Overlay */}
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0 py-6" data-aos="fade-up">
-            <h2
-              className="text-3xl font-semibold tracking-tight text-white sm:text-7xl lg:text-4xl"
-              aos="fade-up"
+      {/* Hero Section */}
+      <section className="font-plus-jakarta-sans sm:px-8 mt-32 lg:mt-16 relative p-5 lg:p-0">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center gap-10 lg:p-10">
+          <div className="flex flex-col items-center sm:items-start gap-6">
+            <h1
+              className="text-3xl sm:text-4xl font-bold text-center sm:text-left"
+              data-aos="fade-down"
+              data-aos-offset="200"
             >
-              Empowering the Future with Tech
-            </h2>
-            <p
-              className="mt-8 text-lg font-medium text-gray-300 sm:text-xl lg:text-[15px]"
-              aos="fade-up"
-            >
-              At Digitech Solutions, we develop cutting-edge software,
-              AI-powered platforms, and scalable cloud infrastructure to drive
-              innovation and digital transformation for enterprises around the
-              world.
-            </p>
-          </div>
+              We Build{" "}
+              <ReactTyped
+                strings={[
+                  "Digital Products.",
+                  "Enterprise Platforms.",
+                  "Custom Solutions.",
+                ]}
+                typeSpeed={80}
+                backSpeed={40}
+                loop
+              />
+            </h1>
 
-          <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-            <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+            <p
+              className="text-[16px] lg:text-[16px] text-center sm:text-left text-[#88918B] font-light leading-6"
+              data-aos="fade-up"
+              data-aos-offset="200"
+            >
+              We specialize in providing software and marketing solutions to
+              big, micro, small and medium scale enterprises that are looking to
+              deploy digital innovations and techniques as the cornerstone of
+              their organization’s operation, for faster and enhanced efficiency
+              and scalability.
+            </p>
+            <div className="  gap-4">
               {links.map((link) => (
-                <a key={link.name} href={link.href} onClick={handleScroll}>
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={handleScroll}
+                  className="bg-green-800 text-white px-5 py-3 text-sm font-bold hover:bg-green-700 transition flex items-center justify-center rounded-full  transition-colors duration-300"
+                >
                   {link.name} <span aria-hidden="true">&rarr;</span>
                 </a>
               ))}
             </div>
-
-            <dl
-              ref={ref}
-              className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
-            >
-              {stats.map((stat) => (
-                <div
-                  key={stat.name}
-                  className="flex flex-col-reverse gap-1 font-Elsie-swash"
-                >
-                  <dt className="text-base text-gray-300">{stat.name}</dt>
-                  <dd
-                    className="text-4xl font-semibold tracking-tight text-white"
-                    data-aos="fade-up"
-                  >
-                    {inView ? (
-                      <CountUp end={stat.value} duration={2} suffix="+" />
-                    ) : (
-                      "0"
-                    )}
-                  </dd>
-                </div>
-              ))}
-            </dl>
           </div>
-        </div>
-      </div>
 
+          <img
+            src={ServiceImg}
+            alt="Digital Tech Illustration"
+            className="w-full sm:w-1/2 max-w-md"
+            data-aos="fade-left"
+            data-aos-delay="200"
+            data-aos-duration="1000"
+            data-aos-offset="200"
+          />
+        </div>
+      </section>
+      <AboutusContemtW />
       <section
         className="text-center py-16 px-6 bg-white font-plus-jakarta-sans"
         data-aos="fade-up"
@@ -153,10 +149,17 @@ const Aboutpage = () => {
           {tabs.find((tab) => tab.label === activeTab)?.content}
         </div>
       </section>
+      {/* Company Logos */}
+      <div className="w-full bg-green-900 sm:px-8 font-plus-jakarta-sans text-white">
+        <Companies />
+      </div>
+
       <Stats />
       <Mission />
-
+      <WhyWorkWithUs />
+      <OurDivisions />
       <WhyChooseUs />
+
       <div ref={clipboardSectionRef} id="clipboardSection">
         <TeamSection />{" "}
       </div>

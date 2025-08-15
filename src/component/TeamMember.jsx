@@ -6,22 +6,22 @@ import image9 from "../assets/img/fixed-height sec-.png";
 
 const team = [
   {
-    name: "Mina Collins",
-    role: "Teacher in Math",
+    name: "Alex Johnson",
+    role: "Lead Software Engineer",
     image: image7,
-    desc: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    desc: "Specializes in full-stack development and cloud solutions, with a passion for mentoring young developers and building innovative digital products.",
   },
   {
-    name: "Anderson Matthew",
-    role: "Teacher in Music",
+    name: "Sofia Martinez",
+    role: "Creative Director",
     image: image8,
-    desc: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    desc: "Expert in digital marketing, branding, and content creation, helping businesses craft compelling visual and strategic identities.",
   },
   {
-    name: "Cynthia Misso",
-    role: "Teacher in English",
+    name: "Dr. Ethan Carter",
+    role: "Robotics & AI Specialist",
     image: image9,
-    desc: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    desc: "Focused on robotics programming, AI-driven automation, and inspiring the next generation of engineers to think beyond limits.",
   },
 ];
 
@@ -30,11 +30,12 @@ export default function TeamMember() {
     <section className="bg-white py-16 px-4 sm:px-6 lg:px-8 font-plus-jakarta-sans">
       <div className="max-w-5xl mx-auto text-center mb-14">
         <h2 className="text-3xl sm:text-4xl font-bold text-emerald-700 mb-2">
-          Our Team
+          Meet Our Experts
         </h2>
         <p className="text-gray-600 max-w-xl mx-auto">
-          Far far away, behind the word mountains, far from the countries
-          Vokalia and Consonantia, there live the blind texts.
+          A dedicated team of innovators, engineers, and creatives committed to
+          delivering world-class digital solutions and transformative learning
+          experiences.
         </p>
       </div>
 

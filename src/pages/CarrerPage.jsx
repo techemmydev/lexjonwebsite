@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 
 const CarrerPage = () => {
+  const formRef = useRef(null);
+  const jobsRef = useRef(null);
+
   const benefits = [
     {
       title: "Large Beautiful Office",
@@ -35,11 +38,39 @@ const CarrerPage = () => {
   ];
 
   const jobOpenings = [
-    "Marketing Advisor",
-    "Supervisor",
-    "Field Agent",
-    "Receptionist",
+    {
+      title: "Digital Marketing Specialist",
+      desc: "Plan, execute, and optimize online marketing campaigns across social media, search, and email to drive engagement and growth.",
+    },
+    {
+      title: "Content Creator",
+      desc: "Develop high-quality written, visual, and video content that tells compelling brand stories and resonates with target audiences.",
+    },
+    {
+      title: "UI/UX Designer",
+      desc: "Design intuitive, engaging, and visually appealing digital experiences that improve user satisfaction and conversion rates.",
+    },
+    {
+      title: "Customer Success Manager",
+      desc: "Build strong relationships with clients, ensuring they achieve maximum value from our services and solutions.",
+    },
   ];
+
+  const scrollToForm = (jobTitle) => {
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth" });
+      const positionInput = formRef.current.querySelector(
+        'input[placeholder="Position Interested In"]'
+      );
+      if (positionInput) positionInput.value = jobTitle;
+    }
+  };
+
+  const scrollToJobs = () => {
+    if (jobsRef.current) {
+      jobsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="text-gray-800 font-plus-jakarta-sans">
@@ -52,7 +83,10 @@ const CarrerPage = () => {
             Join a dynamic team that's shaping the future of digital. Grow with
             us.
           </p>
-          <button className="bg-white text-green-950 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition">
+          <button
+            className="bg-white text-green-950 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition"
+            onClick={scrollToJobs}
+          >
             View Openings
           </button>
         </div>
@@ -82,20 +116,21 @@ const CarrerPage = () => {
       </section>
 
       {/* JOB OPENINGS + FORM */}
-      <section className="bg-white py-20 px-6">
+      <section ref={jobsRef} className="bg-white py-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
           {/* Job Cards */}
           <div className="md:col-span-2 grid sm:grid-cols-2 gap-6">
-            {jobOpenings.map((role, i) => (
+            {jobOpenings.map((job, i) => (
               <div
                 key={i}
                 className="border rounded-xl p-6 shadow hover:shadow-md transition"
               >
-                <h4 className="font-bold text-lg mb-2">{role}</h4>
-                <p className="text-sm text-gray-600 mb-4">
-                  Be part of a forward-thinking, fast-growing team.
-                </p>
-                <button className="bg-green-950 text-white text-sm px-4 py-2 rounded hover:bg-green-900 transition">
+                <h4 className="font-bold text-lg mb-2">{job.title}</h4>
+                <p className="text-sm text-gray-600 mb-4">{job.desc}</p>
+                <button
+                  onClick={() => scrollToForm(job.title)}
+                  className="bg-green-950 text-white text-sm px-4 py-2 rounded hover:bg-green-900 transition"
+                >
                   Apply Now
                 </button>
               </div>
@@ -103,7 +138,7 @@ const CarrerPage = () => {
           </div>
 
           {/* Application Form */}
-          <div className="bg-gray-100 p-6 rounded-xl shadow">
+          <div ref={formRef} className="bg-gray-100 p-6 rounded-xl shadow">
             <h3 className="text-xl font-bold mb-4">Apply Now</h3>
             <form className="space-y-4">
               <input
@@ -138,7 +173,7 @@ const CarrerPage = () => {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-white py-10 px-6 border-t">
+      <footer className="bg-white py-20 px-6 border-t">
         <div className="max-w-6xl mx-auto grid sm:grid-cols-3 gap-6 text-center text-sm text-gray-700">
           <div>
             <p className="font-semibold">🏆 Award Winning</p>

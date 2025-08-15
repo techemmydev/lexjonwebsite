@@ -19,8 +19,10 @@ const navigation = [
 ];
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-green-950 text-white py-10 px-6 sm:px-10 lg:px-20 font-plus-jakarta-sans">
+    <footer className="bg-green-950 text-white py-10 px-6 sm:px-10 lg:px-20 font-plus-jakarta-sans ">
       <div className="max-w-7xl mx-auto grid gap-10 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
         {/* Logo and Description */}
         <div className="col-span-1">
@@ -30,13 +32,15 @@ const Footer = () => {
               CA Global Digital
             </span>
           </div>
-          <p className="text-sm text-gray-300">
-            Aliquam rhoncus ligula eu eros pellentesque consequat nec donec
-            mattis odio.
+          <p className="text-sm text-gray-300 lg:text-xs">
+            CA Global Digital Company Ltd is a multi-division technology and
+            creative solutions firm committed to empowering individuals,
+            businesses, and institutions through innovation, digital
+            transformation, and practical tech skills.
           </p>
           <div className="flex gap-4 mt-6">
             <a
-              href="https://facebook.com/yourpage"
+              href="facebook.com/caglobaldigitalcompany"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transition"
@@ -60,7 +64,7 @@ const Footer = () => {
               <FaLinkedinIn size={20} />
             </a>
             <a
-              href="https://instagram.com/yourprofile"
+              href=" https://www.instagram.com/caglobalsltd"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transition"
@@ -132,7 +136,7 @@ const Footer = () => {
 
       {/* Bottom Text */}
       <div className="mt-10 text-center  text-gray-400 border-t border-gray-700 pt-6     text-[17px]  lg:text-sm">
-        © 2025 LEXJON Technologies. All rights reserved
+        © {currentYear} CA Globals . All rights reserved
       </div>
     </footer>
   );

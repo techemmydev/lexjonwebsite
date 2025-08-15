@@ -13,7 +13,7 @@ export default function HeroSection() {
 
   return (
     <div
-      className="pt-32 bg-cover bg-center bg-no-repeat font-plus-jakarta-sans relative"
+      className="pt-32 lg:p-30 bg-cover bg-center bg-no-repeat font-plus-jakarta-sans relative"
       style={{ backgroundImage: `url(${heroimage})` }}
     >
       <div className="absolute inset-0 bg-black opacity-80 z-0"></div>

@@ -1,57 +1,75 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 import { Gem, Target, ThumbsUp } from "lucide-react";
 
+const tabs = [
+  {
+    label: "Our Edge",
+    icon: <Gem className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />,
+    content:
+      "What makes CA GLOBALS truly stand out is our unwavering commitment to excellence. From planning to execution, we deliver exceptional results with precision, creativity, and care.",
+  },
+  {
+    label: "Mission",
+    icon: <Target className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />,
+    content:
+      "To deliver world-class digital solutions, education, and creative services that empower people and transform businesses.",
+  },
+  {
+    label: "Vision",
+    icon: <ThumbsUp className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />,
+    content:
+      "To be the leading digital innovation and creative marketing service providers in Africa.",
+  },
+];
+
 const DiscoverOurStory = () => {
+  const [activeTab, setActiveTab] = useState(0);
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
   return (
     <section
-      className="text-center py-16 px-6 bg-white font-plus-jakarta-sans"
+      className="text-center py-12 px-4 sm:px-6 bg-white font-plus-jakarta-sans"
       data-aos="fade-up"
     >
-      <h2 className="text-3xl md:text-4xl font-bold">Discover Our Story</h2>
-      <p className="text-gray-600 mt-2">
-        Learn about our Journey, Mission, and Values that drive us
+      <h2 className="text-2xl sm:text-3xl font-bold">WHO WE ARE</h2>
+      <p className="text-gray-600 mt-2 text-base sm:text-lg max-w-3xl mx-auto">
+        CA Global Digital Company Ltd is a multi-division technology and
+        creative solutions firm committed to empowering individuals, businesses,
+        and institutions through innovation, digital transformation, and
+        practical tech skills.
       </p>
 
+      {/* Tab Buttons */}
+      <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-8">
+        {tabs.map((tab, index) => (
+          <button
+            key={tab.label}
+            onClick={() => setActiveTab(index)}
+            className={`flex items-center justify-center px-4 sm:px-5 py-2 rounded-full border text-sm sm:text-base transition-all ${
+              activeTab === index
+                ? "bg-emerald-600 text-white border-emerald-600"
+                : "border-gray-300 text-gray-700 hover:border-emerald-500 hover:text-emerald-600"
+            }`}
+          >
+            {tab.icon}
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Active Tab Content */}
       <div
-        className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 max-w-6xl mx-auto"
+        className="flex flex-col items-center mt-8 max-w-3xl mx-auto"
         data-aos="fade-up"
       >
-        <div className="flex flex-col items-center" data-aos="fade-up">
-          <Gem className="w-10 h-10 text-gray-700" />
-          <h3 className="text-xl font-bold mt-4">Our Edge</h3>
-          <p className="text-gray-600 mt-2 font-light">
-            What makes CA GLOBALS truly stand out is our unwavering commitment
-            to excellence. From planning to execution, we deliver exceptional
-            results with precision, creativity, and care.
-          </p>
-        </div>
-
-        <div className="flex flex-col items-center" data-aos="fade-up">
-          <Target className="w-10 h-10 text-gray-700" />
-          <h3 className="text-xl font-bold mt-4">Mission</h3>
-          <p className="text-gray-600 mt-2 font-light">
-            We aim to create unforgettable experiences by offering beautiful
-            venues and comprehensive event planning services tailored to our
-            clients' needs. Your satisfaction is our priority.
-          </p>
-        </div>
-
-        <div className="flex flex-col items-center" data-aos="fade-up">
-          <ThumbsUp className="w-10 h-10 text-gray-700" />
-          <h3 className="text-xl font-bold mt-4">Vision</h3>
-          <p className="text-gray-600 mt-2 font-light">
-            We believe in customer satisfaction, quality, integrity, and
-            creativity. These values guide us in every event we host, ensuring a
-            unique and memorable experience for our clients.
-          </p>
-        </div>
+        <p className="text-gray-600 mt-2 font-light text-sm sm:text-base">
+          {tabs[activeTab].content}
+        </p>
       </div>
     </section>
   );

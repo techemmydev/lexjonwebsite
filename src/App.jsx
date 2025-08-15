@@ -12,7 +12,9 @@ import ServicePage from "./pages/ServicePage";
 import CareerPage from "./pages/CarrerPage";
 import Contactpage from "./pages/ContactPage";
 import Products from "./pages/Products";
-
+import SoftwareDevelopment from "./pages/SoftwareDevelopment";
+import Creative from "./pages/Creative";
+import EmbeddedRoboticsLanding from "./pages/EmbeddedRoboticsLanding";
 const App = () => {
   const [scrollDirection, setScrollDirection] = useState("down");
 
@@ -61,6 +63,12 @@ const App = () => {
             <Route path="/services" element={<ServicePage />} />
             <Route path="/careers" element={<CareerPage />} />
             <Route path="/product" element={<Products />} />
+            <Route
+              path="/SoftwareDevelopment"
+              element={<SoftwareDevelopment />}
+            />
+            <Route path="/creative" element={<Creative />} />
+            <Route path="/robotics" element={<EmbeddedRoboticsLanding />} />
           </Route>
         </Routes>
       </div>
