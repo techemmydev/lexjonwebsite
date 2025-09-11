@@ -265,7 +265,7 @@ export default function Creative() {
       {/* CTA */}
       <section
         id="contact"
-        className="bg-gradient-to-r from-green-900 to-green-600 text-white py-16 text-center text-gray-700 font-plus-jakarta-sans"
+        className="bg-gradient-to-r from-green-900 to-green-600  py-16 text-center text-gray-700 font-plus-jakarta-sans"
       >
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-3xl font-bold mb-4 text-white">
