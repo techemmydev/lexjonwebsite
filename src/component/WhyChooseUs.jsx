@@ -1,11 +1,16 @@
-import React from "react";
-import { CheckIcon, PlayCircleIcon } from "@heroicons/react/24/solid";
+import React, { useState } from "react";
+import {
+  CheckIcon,
+  PlayCircleIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/solid";
 import logo from "../assets/logo/calogo.png";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
 export default function WhyChooseUs() {
   const { ref, inView } = useInView({ triggerOnce: true });
+  const [showVideo, setShowVideo] = useState(false);
 
   return (
     <div className="bg-white py-20 px-4 sm:px-6 lg:px-8 font-plus-jakarta-sans">
@@ -73,9 +78,37 @@ export default function WhyChooseUs() {
             alt="Tech Partnership"
             className="w-full h-auto rounded-md shadow-xl object-cover"
           />
-          <PlayCircleIcon className="w-16 h-16 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-90 hover:opacity-100 cursor-pointer" />
+          <button
+            onClick={() => setShowVideo(true)}
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          >
+            <PlayCircleIcon className="w-16 h-16 text-white opacity-90 hover:opacity-100 cursor-pointer" />
+          </button>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+          <div className="relative bg-black rounded-lg w-full max-w-3xl aspect-video">
+            {/* Close button */}
+            <button
+              className="absolute -top-10 right-0 text-white text-3xl"
+              onClick={() => setShowVideo(false)}
+            >
+              <XMarkIcon className="w-8 h-8" />
+            </button>
+
+            {/* YouTube Embed */}
+            <iframe
+              className="w-full h-full rounded-lg"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+              title="YouTube video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

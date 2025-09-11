@@ -1,36 +1,44 @@
 import React from "react";
-import ServiceImg from "../assets/img/serviceImg1.png";
+// import ServiceImg from "../assets/img/serviceImg1.png";
+import workstation from "../assets/img/workstation.avif";
+import Software from "../assets/img/sofware.avif";
+import Softwareintergration from "../assets/img/integration.avif";
+import dev from "../assets/img/dev.avif";
+import mobile from "../assets/img/mobile.avif";
+import maintance from "../assets/img/maintance.avif";
+import sass from "../assets/img/sass.avif";
+import business from "../assets/img/business.avif";
 
 const services = [
   {
     title: "Custom Software Development",
     desc: "Tailored solutions built around your unique processes and goals.",
-    img: "https://images.unsplash.com/photo-1517430816045-df4b7de1cd0e?auto=format&fit=crop&w=800&q=80",
+    img: Software,
   },
   {
     title: "Web Application Development",
     desc: "Fast, responsive, and visually stunning web applications.",
-    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    img: dev,
   },
   {
     title: "Mobile App Development",
     desc: "iOS and Android apps that deliver seamless user experiences.",
-    img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+    img: mobile,
   },
   {
     title: "SaaS Product Development",
     desc: "Cloud-based platforms designed for scalability and global reach.",
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+    img: sass,
   },
   {
     title: "Software Integration",
     desc: "Ensuring your tools and systems work together smoothly.",
-    img: "https://images.unsplash.com/photo-1605902711622-cfb43c44367f?auto=format&fit=crop&w=800&q=80",
+    img: Softwareintergration,
   },
   {
     title: "Maintenance & Support",
     desc: "Continuous updates, bug fixes, and performance improvements.",
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+    img: maintance,
   },
 ];
 
@@ -60,7 +68,7 @@ const processSteps = [
 
 export default function SoftwareDevelopment() {
   return (
-    <div className="font-sans text-gray-800 font-plus-jakarta-sans">
+    <div className=" text-gray-800 font-plus-jakarta-sans">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-600 to-green-900 text-white lg:p-20">
         <div className="max-w-7xl mx-auto px-6 py-30 grid lg:grid-cols-2 gap-12 items-center">
@@ -80,11 +88,11 @@ export default function SoftwareDevelopment() {
               Get a Free Consultation
             </a>
           </div>
-          <img
-            src={ServiceImg}
+          {/* <img
+            src=""
             alt="Modern Software Development"
             className="rounded-xl shadow-lg object-cover w-full h-80"
-          />
+          /> */}
         </div>
       </section>
 
@@ -92,8 +100,10 @@ export default function SoftwareDevelopment() {
       <section className="py-16 bg-gray-50 font-plus-jakarta-sans">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-4">What We Do Here</h2>
-            <p className="mb-4">
+            <h2 className="text-3xl font-bold mb-4 text-black">
+              What We Do Here
+            </h2>
+            <p className="mb-4  text-black">
               Our Software Development Division at{" "}
               <strong>CA Global Digital Company Ltd</strong> is dedicated to
               turning your vision into a digital reality. We combine technical
@@ -101,14 +111,14 @@ export default function SoftwareDevelopment() {
               applications that solve real problems and create new
               opportunities.
             </p>
-            <p>
+            <p className=" text-black">
               Whether you need a custom enterprise system, a mobile app, or a
               SaaS platform, we ensure your software is user-friendly, secure,
               and built to scale.
             </p>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80"
+            src={workstation}
             alt="Development Team"
             className="rounded-xl shadow-lg"
           />
@@ -182,11 +192,7 @@ export default function SoftwareDevelopment() {
               </li>
             </ul>
           </div>
-          <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
-            alt="Trust"
-            className="rounded-xl shadow-lg"
-          />
+          <img src={business} alt="Trust" className="rounded-xl shadow-lg" />
         </div>
       </section>
 

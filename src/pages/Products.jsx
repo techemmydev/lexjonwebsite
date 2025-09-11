@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import heroimage from "../assets/img/im.jpeg";
 import { ReactTyped } from "react-typed";
-
+import stragt from "../assets/img/stragt.avif";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Stats from "../component/Stats";
@@ -63,7 +63,7 @@ const Products = () => {
           {/* Right Image */}
           <div className="w-full lg:w-1/2 flex justify-center">
             <img
-              src="https://plus.unsplash.com/premium_photo-1661767467261-4a4bed92a507?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGVhbXxlbnwwfHwwfHx8MA%3D%3D"
+              src={stragt}
               alt="Business Meeting"
               className="w-full h-auto rounded-l-4xl"
             />

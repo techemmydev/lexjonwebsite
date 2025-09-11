@@ -3,6 +3,9 @@ import { useNavigate } from "react-router";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Button from "./Button";
+import Software from "../assets/img/sofware.avif";
+import digital from "../assets/img/digital.avif";
+import robotics from "../assets/img/robotics.avif";
 
 // Service data with routes
 const services = [
@@ -10,21 +13,21 @@ const services = [
     title: "Software Development",
     description:
       "Empowering students with the fundamentals of information technology, digital literacy, and essential computer skills for today's digital world.",
-    img: "https://media.istockphoto.com/id/1363276509/photo/teacher-giving-computer-science-lecture-to-diverse-multiethnic-group-of-female-and-male.webp?a=1&b=1&s=612x612&w=0&k=20&c=a1ZasRfRVrbXp7Q7Pr7PBXD9zqeg2PsL3qgl0EoOT0I=",
+    img: Software, // ✅ fixed
     link: "/SoftwareDevelopment",
   },
   {
     title: "Creative & Digital Marketing",
     description:
       "Hands-on learning in web, mobile, and desktop application development using modern frameworks and tools in real time.",
-    img: "https://plus.unsplash.com/premium_photo-1733353204288-ba5c8ba3ad7d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fHNvZnR3YXJlJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D",
+    img: digital, // ✅ fixed
     link: "/creative",
   },
   {
     title: "Embedded Systems & Robotics",
     description:
       "Fostering innovation through robotics, sensors, and automation programming—designed to inspire young engineers.",
-    img: "https://images.unsplash.com/photo-1527612820672-5b56351f7346?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHJvYm90aWNzfGVufDB8fDB8fHww",
+    img: robotics, // ✅ fixed
     link: "/robotics",
   },
 ];
@@ -69,11 +72,7 @@ const EventServices = () => {
               data-aos="fade-up"
             >
               <img
-                src={
-                  loadedImages[index]
-                    ? service.img
-                    : "https://via.placeholder.com/500x300?text=Loading..."
-                }
+                src={service.img} // ✅ fixed
                 alt={service.title}
                 className={`rounded-lg w-full h-40 object-cover mb-4 transition-opacity duration-700 ${
                   loadedImages[index] ? "opacity-100" : "opacity-0"

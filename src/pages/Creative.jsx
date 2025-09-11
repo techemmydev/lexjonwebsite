@@ -4,6 +4,11 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import heroimage from "../assets/img/heroimage2.avif";
+import transform from "../assets/img/transform.avif";
+import ideas from "../assets/img/ideas.avif";
+import bulb from "../assets/img/bulb.avif";
+import techstudio from "../assets/img/techstudio.avif";
 
 // Creative & Digital Content Services
 const creativeServices = [
@@ -84,23 +89,23 @@ export default function Creative() {
           </a>
         </div>
         <img
-          src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1600&q=80"
+          src={heroimage}
           alt="Marketing"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
       </section>
       {/* About */}
-      <div className="bg-gray-50 min-h-screen py-30">
+      <div className="bg-gray-50 min-h-screen py-30 text-black">
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <p className="text-3xl md:text-4xl uppercase tracking-wider text-gray-500 mb-2 font-plus-jakarta-sans">
-            About our digital agency
+          <p className="text-3xl md:text-4xl uppercase tracking-wider text-black mb-2 font-plus-jakarta-sans">
+            About Our Digital Agency
           </p>
-          <h2 className="text-lg text-gray-800 leading-relaxed">
-            Plantronics with its GN Netcom{" "}
-            <span className="font-semibold">wireless headset</span> creates the
-            next generation of wireless headset and other products such as
-            wireless amplifiers, and
-            <span className="font-semibold"> wireless headset</span> telephone.
+          <h2 className="text-lg text-black leading-relaxed">
+            We are a forward-thinking digital agency specializing in{" "}
+            <span className="font-semibold">creative solutions</span> that merge
+            technology and strategy. From digital transformation to{" "}
+            <span className="font-semibold">innovative design</span>, we help
+            businesses build impactful experiences that inspire growth.
           </h2>
         </div>
 
@@ -108,19 +113,19 @@ export default function Creative() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
           {[
             {
-              img: "https://via.placeholder.com/400x250",
-              title: "Addiction Whit Gambling",
-              desc: "It is a good idea to think of your PC as an office. It stores files, programs, pictures. This can be compared to an actual office's files.",
+              img: transform,
+              title: "Digital Transformation",
+              desc: "Empowering enterprises to modernize their workflows, leverage cloud technologies, and stay competitive in an ever-evolving digital landscape.",
             },
             {
-              img: "https://via.placeholder.com/400x250",
-              title: "Headset No Longer Wired",
-              desc: "If you are in the market for a computer, there are a number of factors to consider. Will it be used for your home, your office or perhaps...",
+              img: bulb,
+              title: "Innovative Solutions",
+              desc: "Delivering cutting-edge platforms, mobile applications, and AI-driven tools designed to streamline processes and enhance customer experiences.",
             },
             {
-              img: "https://via.placeholder.com/400x250",
-              title: "Life Advice Looking at Window",
-              desc: "Having a baby can be a nerve wracking experience for new parents – not the nine months of pregnancy, I’m talking...",
+              img: ideas,
+              title: "Strategic Consulting",
+              desc: "Partnering with organizations to define their digital roadmap, optimize investments, and align business goals with modern technology opportunities.",
             },
           ].map((card, idx) => (
             <div
@@ -147,6 +152,7 @@ export default function Creative() {
           ))}
         </div>
       </div>
+
       {/* Split Section */}
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-2">
@@ -159,11 +165,14 @@ export default function Creative() {
                 A Digital Studio Crafting Tech Business
               </h2>
               <p className="text-gray-300 text-sm mb-6">
-                Computer users and programmers have become so accustomed to
-                using Windows, even for the changing capabilities and the
-                appearances of the graphical interface of the versions;
-                therefore it has remained Microsoft's product. Although,
-                Lycosit, Red Hat, Mandrake...
+                As a digital technology studio, we specialize in crafting
+                solutions that merge creativity with cutting-edge innovation.
+                Our focus is on building seamless digital experiences—whether
+                through intuitive design, scalable platforms, or intelligent
+                automation. By leveraging modern frameworks, cloud technology,
+                and data-driven insights, we help businesses transform ideas
+                into impactful digital products that inspire growth and deliver
+                measurable results.
               </p>
               <button className="flex items-center gap-1 text-white border border-green-400 rounded-full px-4 py-1 text-sm hover:bg-green-400 hover:text-indigo-900 transition">
                 Start Business <span>→</span>
@@ -172,7 +181,7 @@ export default function Creative() {
           </div>
           <div>
             <img
-              src="https://via.placeholder.com/800x500"
+              src={techstudio}
               alt="Team working"
               className="w-full h-full object-cover"
             />

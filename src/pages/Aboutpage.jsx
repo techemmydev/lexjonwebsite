@@ -96,7 +96,7 @@ const Aboutpage = () => {
                   key={link.name}
                   href={link.href}
                   onClick={handleScroll}
-                  className="bg-green-800 text-white px-5 py-3 text-sm font-bold hover:bg-green-700 transition flex items-center justify-center rounded-full  transition-colors duration-300"
+                  className="bg-green-800 text-white px-5 py-3 text-sm font-bold hover:bg-green-700  flex items-center justify-center rounded-full  transition-colors duration-300"
                 >
                   {link.name} <span aria-hidden="true">&rarr;</span>
                 </a>

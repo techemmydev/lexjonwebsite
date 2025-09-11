@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import roboticshuma from "../assets/img/humanrobot.avif";
 export default function CTASections() {
   return (
     <div className="bg-none lg:bg-green-900">
@@ -35,7 +36,7 @@ export default function CTASections() {
           <div className="relative mt-16 w-full max-w-md lg:mt-8 lg:max-w-lg hidden lg:flex lg:flex-auto">
             <img
               alt="Robot illustration"
-              src="https://images.unsplash.com/photo-1625314868143-20e93ce3ff33?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJvYm90fGVufDB8fDB8fHww"
+              src={roboticshuma}
               className="w-90 h-auto rounded-md bg-white/5 ring-1 ring-white/10 object-cover"
             />
           </div>

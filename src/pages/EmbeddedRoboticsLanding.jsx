@@ -1,3 +1,5 @@
+import people from "../assets/img/people.avif";
+
 const features = [
   {
     title: "IoT Integration",
@@ -33,7 +35,7 @@ const features = [
 
 export default function EmbeddedRoboticsLanding() {
   return (
-    <div className="min-h-screen flex flex-col font-sans text-gray-800 font-plus-jakarta-sans">
+    <div className="min-h-screen flex flex-col  text-gray-800 font-plus-jakarta-sans">
       {/* Hero Section */}
       <header className="bg-gradient-to-r from-green-600 to-green-600 text-white py-35 lg:py-40">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-6">
@@ -53,11 +55,11 @@ export default function EmbeddedRoboticsLanding() {
             </a>
           </div>
           <div className="flex-1">
-            <img
+            {/* <img
               src="https://images.unsplash.com/photo-1581090700227-4c4f50b6e54e?auto=format&fit=crop&w=800&q=80"
               alt="Robotics"
               className="rounded-2xl shadow-lg"
-            />
+            /> */}
           </div>
         </div>
       </header>
@@ -82,7 +84,7 @@ export default function EmbeddedRoboticsLanding() {
       <section className="py-12 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8 font-plus-jakarta-sans">
         <div className="flex-1">
           <img
-            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+            src={people}
             alt="Embedded Systems"
             className="rounded-2xl shadow-lg"
           />
@@ -107,7 +109,7 @@ export default function EmbeddedRoboticsLanding() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="py-12 bg-gray-50 font-plus-jakarta-sans bg-green-700"
+        className="py-12  font-plus-jakarta-sans bg-green-700"
       >
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8 text-white">
