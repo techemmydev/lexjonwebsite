@@ -5,7 +5,7 @@ import DiscoverOurStory from "../component/DiscoverOurStory";
 import Testimonial from "../component/Testimonial";
 import Stats from "../component/Stats";
 import EventServices from "../component/EventServices";
-import Companieslogo from "../component/Companieslogo";
+// import Companieslogo from "../component/Companieslogo";
 import CTASections from "../component/CTASections";
 import Workflow from "../component/workflow";
 import CoreValues from "@/component/OurcoreValue";
@@ -16,7 +16,7 @@ const Homepage = () => {
       <DiscoverOurStory />
       <CoreValues />
       <EventServices />
-      <Companieslogo />
+      {/* <Companieslogo /> */}
       <CTASections />
       <Stats />
       <Testimonial />

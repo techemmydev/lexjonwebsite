@@ -3,29 +3,29 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Gem, Target, ThumbsUp } from "lucide-react";
 
-const tabs = [
-  {
-    label: "Our Edge",
-    icon: <Gem className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />,
-    content:
-      "What makes CA GLOBALS truly stand out is our unwavering commitment to excellence. From planning to execution, we deliver exceptional results with precision, creativity, and care.",
-  },
-  {
-    label: "Mission",
-    icon: <Target className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />,
-    content:
-      "To deliver world-class digital solutions, education, and creative services that empower people and transform businesses.",
-  },
-  {
-    label: "Vision",
-    icon: <ThumbsUp className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />,
-    content:
-      "To be the leading digital innovation and creative marketing service providers in Africa.",
-  },
-];
+// const tabs = [
+//   {
+//     label: "Our Edge",
+//     icon: <Gem className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />,
+//     content:
+//       "What makes CA GLOBALS truly stand out is our unwavering commitment to excellence. From planning to execution, we deliver exceptional results with precision, creativity, and care.",
+//   },
+//   {
+//     label: "Mission",
+//     icon: <Target className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />,
+//     content:
+//       "To deliver world-class digital solutions, education, and creative services that empower people and transform businesses.",
+//   },
+//   {
+//     label: "Vision",
+//     icon: <ThumbsUp className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />,
+//     content:
+//       "To be the leading digital innovation and creative marketing service providers in Africa.",
+//   },
+// ];
 
 const DiscoverOurStory = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  // const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -45,7 +45,7 @@ const DiscoverOurStory = () => {
       </p>
 
       {/* Tab Buttons */}
-      <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-8">
+      {/* <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-8">
         {tabs.map((tab, index) => (
           <button
             key={tab.label}
@@ -60,17 +60,17 @@ const DiscoverOurStory = () => {
             {tab.label}
           </button>
         ))}
-      </div>
+      </div> */}
 
       {/* Active Tab Content */}
-      <div
+      {/* <div
         className="flex flex-col items-center mt-8 max-w-3xl mx-auto"
         data-aos="fade-up"
       >
         <p className="text-gray-600 mt-2 font-light text-sm sm:text-base">
           {tabs[activeTab].content}
         </p>
-      </div>
+      </div> */}
     </section>
   );
 };
