@@ -10,28 +10,42 @@ import {
 
 const features = [
   {
-    name: "AI-Powered Efficiency",
+    name: "Full-Stack Development",
     description:
-      "Automate tasks and streamline workflows using advanced machine learning and artificial intelligence.",
+      "Learn modern web, mobile, and desktop application development using the latest frameworks, tools, and best practices.",
     icon: CpuChipIcon,
   },
+
   {
-    name: "Cloud Scalability",
+    name: "Robotics & Automation",
     description:
-      "Deploy and scale across secure cloud infrastructure without worrying about server limitations.",
+      "Design and program autonomous robots with sensors, actuators, and intelligent decision-making systems.",
     icon: CloudIcon,
   },
   {
-    name: "Enterprise-Grade Security",
+    name: "Embedded Systems Programming",
     description:
-      "Your data is protected with top-tier encryption, firewalls, and 24/7 monitoring.",
+      "Develop efficient, low-level software for microcontrollers and IoT devices to connect the physical and digital worlds.",
     icon: LockClosedIcon,
   },
   {
-    name: "Real-Time Analytics",
+    name: "Software Engineering Principles",
     description:
-      "Gain instant insights with live dashboards and performance metrics that drive smarter decisions.",
+      "Master algorithms, data structures, and clean coding practices to build scalable and maintainable solutions.",
+    icon: CpuChipIcon,
+  },
+  {
+    name: "Digital Literacy & IT Foundations",
+    description:
+      "Gain a strong foundation in information technology, networks, and essential digital skills for today’s workforce.",
     icon: ChartBarIcon,
+  },
+
+  {
+    name: "Hands-On Project Learning",
+    description:
+      "Apply knowledge directly through capstone projects, hackathons, and real-world problem-solving challenges.",
+    icon: LockClosedIcon,
   },
 ];
 

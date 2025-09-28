@@ -8,24 +8,24 @@ import Button from "./Button";
 const navigation = [
   { label: "Home", path: "/" },
   { label: "About", path: "/aboutus" },
-  {
-    label: "Services",
-    // path: "/services",
-    children: [
-      { label: "Web Development", path: "/SoftwareDevelopment" },
-      { label: "Creative & Digital Marketing", path: "/creative" },
-      { label: " Embedded Systems & Robotics Solutions", path: "/robotics" },
-    ],
-  },
-  {
-    label: "Products",
-    // path: "/product",
-    children: [
-      { label: "Product A", path: "/product" },
-      { label: "Product B", path: "/product/b" },
-    ],
-  },
-  { label: "Careers", path: "/careers" },
+  // {
+  //   label: "Services",
+  //   // path: "/services",
+  //   children: [
+  //     { label: "Web Development", path: "/SoftwareDevelopment" },
+  //     { label: "Creative & Digital Marketing", path: "/creative" },
+  //     { label: " Embedded Systems & Robotics Solutions", path: "/robotics" },
+  //   ],
+  // },
+  // {
+  //   label: "Products",
+  //   // path: "/product",
+  //   children: [
+  //     { label: "Product A", path: "/product" },
+  //     { label: "Product B", path: "/product/b" },
+  //   ],
+  // },
+  // { label: "Careers", path: "/careers" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -87,7 +87,7 @@ export default function Navbar() {
 
               {/* Dropdown menu */}
               {item.children && (
-                <div className="absolute left-0 mt-2 hidden w-48 rounded-lg bg-white shadow-lg group-hover:block">
+                <div className="absolute left-0 top-full hidden w-48 rounded-lg bg-white shadow-lg group-hover:block">
                   {item.children.map((sub) => (
                     <Link
                       key={sub.label}

@@ -3,7 +3,8 @@ import AOS from "aos";
 import { ReactTyped } from "react-typed";
 import ServiceImg from "../assets/img/serviceImg1.png";
 import "aos/dist/aos.css";
-import Mission from "../component/Mission";
+// import Mission from "../component/Mission";
+import CoreValues from "@/component/OurcoreValue";
 import "swiper/css";
 import "swiper/css/pagination";
 // import CountUp from "react-countup";
@@ -155,7 +156,8 @@ const Aboutpage = () => {
       </div>
 
       <Stats />
-      <Mission />
+      <CoreValues />
+      {/* <Mission /> */}
       <WhyWorkWithUs />
       <OurDivisions />
       <WhyChooseUs />

@@ -40,7 +40,7 @@ export default function Stats() {
                       end={stat.value}
                       duration={2}
                       suffix="+"
-                      className="font-Elsie-swash"
+                      className="font-plus-jakarta-sans"
                     />
                   ) : (
                     "0"

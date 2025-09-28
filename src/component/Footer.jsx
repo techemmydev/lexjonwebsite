@@ -12,9 +12,10 @@ import { Link } from "react-router";
 const navigation = [
   { label: "Home", path: "/" },
   { label: "About", path: "/aboutus" },
-  { label: "Services", path: "/services" },
-  { label: "Products", path: "/product" },
-  { label: "Careers", path: "/careers" },
+
+  // { label: "Services", path: "/services" },
+  // { label: "Products", path: "/product" },
+  // { label: "Careers", path: "/careers" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -22,17 +23,17 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-green-950 text-white py-10 px-6 sm:px-10 lg:px-20 font-plus-jakarta-sans ">
+    <footer className=" text-green-950 py-10 px-6 sm:px-10 lg:px-20 font-plus-jakarta-sans ">
       <div className="max-w-7xl mx-auto grid gap-10 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
         {/* Logo and Description */}
         <div className="col-span-1">
           <div className="flex items-center gap-2 mb-4">
             <img src={Logo} alt="Logo" className="h-10 w-auto" />
-            <span className="text-white font-bold text-lg">
+            <span className=" text-green-950 font-bold text-lg">
               CA Global Digital
             </span>
           </div>
-          <p className="text-sm text-gray-300 lg:text-xs">
+          <p className="text-sm text-green-950 lg:text-xs">
             CA Global Digital Company Ltd is a multi-division technology and
             creative solutions firm committed to empowering individuals,
             businesses, and institutions through innovation, digital
@@ -43,7 +44,7 @@ const Footer = () => {
               href="facebook.com/caglobaldigitalcompany"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition"
+              className=" text-green-950 h hover:text-green-500transition"
             >
               <FaFacebookF size={20} />
             </a>
@@ -51,7 +52,7 @@ const Footer = () => {
               href="https://twitter.com/yourhandle"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition"
+              className=" text-green-950 hover:text-green-500 transition"
             >
               <FaTwitter size={20} />
             </a>
@@ -59,7 +60,7 @@ const Footer = () => {
               href="https://linkedin.com/in/yourprofile"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition"
+              className=" text-green-950 h hover:text-green-500transition"
             >
               <FaLinkedinIn size={20} />
             </a>
@@ -67,7 +68,7 @@ const Footer = () => {
               href=" https://www.instagram.com/caglobalsltd"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition"
+              className=" text-green-950  hover:text-green-500 transition"
             >
               <FaInstagram size={20} />
             </a>
@@ -77,12 +78,12 @@ const Footer = () => {
         {/* Services */}
         <div>
           <h3 className="font-semibold text-lg mb-3">SERVICES</h3>
-          <ul className="text-[17px] space-y-2 text-gray-300 lg:text-sm">
+          <ul className="text-[17px] space-y-2  text-green-950 lg:text-sm">
             <li>Web Design/Development</li>
-            <li>Digital Marketing</li>
+            <li>Embedded Syetem & Robotics</li>
             <li>Software Development</li>
-            <li>Email Marketing</li>
-            <li>Digital Education</li>
+
+            <li>IT Education</li>
             <li>UI/UX Design</li>
           </ul>
         </div>
@@ -91,10 +92,13 @@ const Footer = () => {
         {/* Quick Links */}
         <div>
           <h3 className="font-semibold text-lg mb-3">QUICK LINKS</h3>
-          <ul className="text-[17px] space-y-2 text-gray-300 lg:text-sm">
+          <ul className="text-[17px] space-y-2  text-green-950 lg:text-sm">
             {navigation.map((item, index) => (
               <li key={index}>
-                <Link to={item.path} className="hover:text-white transition">
+                <Link
+                  to={item.path}
+                  className=" hover:text-green-500 transition"
+                >
                   {item.label}
                 </Link>
               </li>
@@ -105,7 +109,7 @@ const Footer = () => {
         {/* Support */}
         <div>
           <h3 className="font-semibold text-lg mb-3">SUPPORT</h3>
-          <ul className="text-[17px] space-y-2 text-gray-300 lg:text-sm">
+          <ul className="text-[17px] space-y-2  text-green-950 lg:text-sm">
             <li>Help Center</li>
             <li>FAQs</li>
             <li>Terms & Condition</li>
@@ -116,26 +120,29 @@ const Footer = () => {
         {/* Newsletter */}
         <div>
           <h3 className="font-semibold text-lg mb-3">Newsletter</h3>
-          <p className="text-[17px] space-y-2 text-gray-300 lg:text-sm mb-4">
+          <p className="text-[17px] space-y-2  text-green-950 lg:text-sm mb-4">
             Subscribe to our newsletter.
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center ">
             <input
               type="email"
               placeholder="Your Email"
-              className="px-3 py-2 w-full sm:w-auto rounded text-black bg-white"
+              className="px-3 py-2 w-full sm:w-auto rounded text-black bg-white outline-green-700 border border-green-700 focus:border-green-500 focus:ring-2 focus:ring-green-200 transition text-[17px] lg:text-sm"
             />
           </div>
           <div className="flex  sm:justify-end mt-3 ">
-            <Button className="bg-[#FAAD29] text-white px-4 py-2 rounded hover:bg-orange-500 transition mt-5">
+            <Button className="bg-green-950 text-white text-xs py-5 px-5 hover:bg-green-900 font-plus-jakarta-sans font-bold cursor-pointer w-full">
               Subscribe
             </Button>
+            {/* <Button className="bg-[#] text-white px-4 py-2 rounded hover:bg-orange-500 transition mt-5">
+              Subscribe
+            </Button> */}
           </div>
         </div>
       </div>
 
       {/* Bottom Text */}
-      <div className="mt-10 text-center  text-gray-400 border-t border-gray-700 pt-6     text-[17px]  lg:text-sm">
+      <div className="mt-10 text-center   text-green-950 border-t border-green-700 pt-6     text-[17px]  lg:text-sm">
         © {currentYear} CA Globals . All rights reserved
       </div>
     </footer>
