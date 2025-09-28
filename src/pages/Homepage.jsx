@@ -6,7 +6,7 @@ import DiscoverOurStory from "../component/DiscoverOurStory";
 import Stats from "../component/Stats";
 import EventServices from "../component/EventServices";
 // import Companieslogo from "../component/Companieslogo";
-// import CTASections from "../component/CTASections";
+import CTASections from "../component/CTASections";
 import Workflow from "../component/workflow";
 import ServiceSlides from "@/component/Nwe";
 import Features from "@/component/Features";
@@ -26,8 +26,9 @@ const Homepage = () => {
       <EventServices />
       <Backgrounoverlay />
       {/* <Companieslogo /> */}
-      {/* <CTASections /> */}
+      <CTASections />
       <Stats />
+
       {/* <Testimonial /> */}
       <Workflow />
     </div>
