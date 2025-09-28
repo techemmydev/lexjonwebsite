@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
           <div className="flex flex-wrap gap-10 mb-8" ref={ref}>
             <div>
               <p className="text-3xl font-bold text-green-900">
-                {inView ? <CountUp end={120} duration={2} suffix="+" /> : "0"}
+                {inView ? <CountUp end={2000} duration={2} suffix="+" /> : "0"}
               </p>
               <p className="text-gray-600 text-sm">Projects Delivered</p>
             </div>
@@ -61,14 +61,14 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Buttons */}
-          <div className="flex gap-4 flex-wrap">
+          {/* <div className="flex gap-4 flex-wrap">
             <button className="bg-green-900 hover:bg-green-800 text-white px-6 py-2 rounded-md text-sm font-semibold">
               Request Demo
             </button>
             <button className="border border-green-900 text-green-900 hover:bg-green-100 px-6 py-2 rounded-md text-sm font-semibold">
               View Case Studies
             </button>
-          </div>
+          </div> */}
         </div>
 
         {/* Image Section */}

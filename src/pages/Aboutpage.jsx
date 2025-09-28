@@ -22,26 +22,29 @@ import AboutusContemtW from "@/component/AboutusContemt";
 
 const links = [{ name: "Meet the Team", href: "#" }];
 
+import { Award, Eye } from "lucide-react";
+
 const tabs = [
   {
     label: "Our Edge",
-    icon: <Gem className="w-6 h-6 mr-2" />,
+    icon: <Award className="w-6 h-6 mr-2 text-green-800" />,
     content:
       "What makes CA GLOBALS truly stand out is our unwavering commitment to excellence. From planning to execution, we deliver exceptional results with precision, creativity, and care.",
   },
   {
     label: "Mission",
-    icon: <Target className="w-6 h-6 mr-2" />,
+    icon: <Target className="w-6 h-6 mr-2 text-green-800" />,
     content:
       "To deliver world-class digital solutions, education, and creative services that empower people and transform businesses.",
   },
   {
     label: "Vision",
-    icon: <ThumbsUp className="w-6 h-6 mr-2" />,
+    icon: <Eye className="w-6 h-6 mr-2 text-green-800" />,
     content:
       "To be the leading digital innovation and creative marketing service providers in Africa",
   },
 ];
+
 const Aboutpage = () => {
   const { ref, inView } = useInView({ triggerOnce: true });
   const clipboardSectionRef = useRef(null);

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import img from "../assets/img/Samsung-Galaxy-S20-localhost.png";
+import img from "../assets/img/mackbok.png";
+// import img from "../assets/img/Samsung-Galaxy-S20-localhost.png";
 
 export default function EventServices() {
   const content = {
@@ -18,7 +19,7 @@ export default function EventServices() {
   return (
     <div className="w-ful py-12 px-6 lg:px-20 font-plus-jakarta-sans">
       <h2 className="text-center text-2xl md:text-3xl font-semibold mb-6 lg:mt-10 uppercase lg:leading-14">
-        A platform that you need <br className="hidden md:block" />
+        A Digital Company that you need <br className="hidden md:block" />
         for every stage in the user journey
       </h2>
 

@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import logo from "../assets/logo/calogo.png";
+// import logo from "../assets/logo/calogo.png";
+import img from "../assets/img/CA.jpg";
 export default function AboutusContemtW() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -39,11 +40,11 @@ export default function AboutusContemtW() {
           data-aos="fade-up"
         >
           <img
-            src={logo}
+            src={img}
             alt="About CA Global Digital"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover bg-no-repeat bg-center "
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/40 to-transparent" />
+          {/* <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/40 to-transparent" /> */}
         </div>
       </div>
     </section>

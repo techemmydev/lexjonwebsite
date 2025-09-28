@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import Button from "../component/Button";
 import AOS from "aos";
 import "aos/dist/aos.css";
-// import imagee from "../assets/img/image.png";
 import imagee1 from "../assets/img/callgril.png";
 import imagee2 from "../assets/img/call.png";
 import imagee3 from "../assets/img/chat_bubble.png";
-// email logo fro
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
-
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+
+// ✅ Toastify
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const customerData = [
   {
@@ -20,13 +21,12 @@ const customerData = [
     image: imagee2,
     button: "+234 906 381 4899",
   },
-
   {
     head: "Email Us",
     paragraph:
       "Chat with our team for quick responses and real-time assistance on any inquiries.",
     image: imagee3,
-    button: "www.lexjon@eschool.ng",
+    button: "Info@caglobals.com",
   },
   {
     head: "Social Media",
@@ -44,6 +44,11 @@ const customerData = [
         href: "https://instagram.com/caglobalsltd",
         icon: <FaInstagram className="h-5 w-5" />,
       },
+      {
+        label: "WhatsApp",
+        href: "https://wa.me/2348151244098?text=Welcome%20to%20CA%20Digital%20Service",
+        icon: <FaWhatsapp className="h-5 w-5 text-green-600" />,
+      },
     ],
     button: "Follow Us",
   },
@@ -51,22 +56,70 @@ const customerData = [
 
 const addressData = [
   { head: "WEBSITE", para: "www.lexjon@eschool.ng" },
-  { head: "PHONE", para: "+234 123 456 7890" },
-  { head: "ADDRESS", para: "123 B Avenue, Ikeja, Lagos, Nigeria" },
+  { head: "PHONE", para: "+2348151244098" },
+  { head: "ADDRESS", para: "51 Sarah Faboyede St, Oshodi-Isolo, Lagos" },
 ];
 
 const ContactPage = () => {
-  const [openModal, setOpenModal] = useState(false); // State for modal
+  const [loading, setLoading] = useState(false);
   const [showPrivacy, setShowPrivacy] = useState(false);
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
+  // ✅ Web3Forms handler
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(event.target);
+
+    // ✅ Required Web3Forms key
+    formData.append("access_key", "e9c5c15d-a128-461b-8794-58c846829f33");
+
+    // ✅ Extra fields
+    formData.append(
+      "subject",
+      "New Submission from CA Global Digital Company Ltd"
+    );
+    formData.append("from_name", "CA Global Digital Company Ltd");
+
+    // reply_to will be the user's email
+    formData.append("reply_to", formData.get("email"));
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        toast.success("✅ Your message was sent successfully!");
+        event.target.reset();
+      } else {
+        toast.error("❌ Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error("⚠️ Failed to send message. Check your connection.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="bg-white py-5 lg:py-10 font-plus-jakarta-sans ">
       {/* Top Section */}
-      {/* Get in touch section */}
-      {/* Section with image and text */}
       <div className="w-full bg-tertiary min-h-[600px] flex justify-center items-center px-4 relative ">
         <div className="flex flex-col sm:flex-row justify-center items-center lg:gap-5 max-w-6xl w-full pt-16 sm:pt-0 relative ">
           <div
@@ -81,7 +134,7 @@ const ContactPage = () => {
             </p>
           </div>
 
-          {/* Image container with z-0 (behind the floating cards) */}
+          {/* Image */}
           <div className="w-full max-w-[500px] sm:max-w-[600px] flex justify-center">
             <img
               data-aos="fade-up"
@@ -92,10 +145,9 @@ const ContactPage = () => {
           </div>
         </div>
 
-        {/* Floating Cards: position absolute + higher z-index */}
-
+        {/* Floating Cards */}
         <div className="absolute lg:bottom-[-50px] left-1/2 transform -translate-x-1/2 w-full px-4 z-10 bottom-[-105px]">
-          {/* ✅ Mobile View (Swiper Slider) */}
+          {/* Mobile View (Swiper) */}
           <div className="sm:hidden">
             <Swiper spaceBetween={16} slidesPerView={1.1}>
               {customerData.map((items, index) => (
@@ -142,7 +194,7 @@ const ContactPage = () => {
             </Swiper>
           </div>
 
-          {/* ✅ Desktop View (unchanged) */}
+          {/* Desktop View */}
           <div className="hidden sm:flex flex-col sm:flex-row justify-center items-center gap-8 flex-wrap max-w-5xl mx-auto">
             {customerData.map((items, index) => (
               <div
@@ -163,7 +215,6 @@ const ContactPage = () => {
                 <div className="text-xs text-text-color text-center mb-4">
                   {items.paragraph}
                 </div>
-                {/* Conditionally render social media icons if index === 2 */}
                 {index === 2 && items.myicons && (
                   <div className="flex gap-4 mb-4">
                     {items.myicons.map((iconItem, i) => (
@@ -175,7 +226,7 @@ const ContactPage = () => {
                         className="text-green-900 hover:underline flex items-center gap-1"
                       >
                         {iconItem.icon}
-                        <span className="text-sm">{iconItem.label}</span>
+                        <span className="text-[10px]">{iconItem.label}</span>
                       </a>
                     ))}
                   </div>
@@ -185,7 +236,6 @@ const ContactPage = () => {
                     {items.button}
                   </Button>
                 )}
-                {/* Render button for all items (or conditionally if needed) */}
               </div>
             ))}
           </div>
@@ -198,13 +248,11 @@ const ContactPage = () => {
           {/* Map Section */}
           <div className="w-full h-80 md:h-auto lg:mt-14">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.0258733373967!2d3.3695381740458545!3d6.51840862322444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c5170879e7d%3A0x247e24b1d430bd15!2sYabatech%20Staff%20Quarter%20Block!5e0!3m2!1sen!2sng!4v1741888499453!5m2!1sen!2sng"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.0223206241994!2d3.2917203737297607!3d6.5188580232199085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8f03efbe96dd%3A0x4c81d2d8609222d3!2s51%20Sarah%20Faboyede%20St%2C%20Oshodi-Isolo%2C%20Lagos%20100264%2C%20Lagos!5e0!3m2!1sen!2sng!4v1759081841228!5m2!1sen!2sng"
               width="100%"
               height="500"
               title="Responsive Google Map"
-              // allowfullscreen=""
               loading="lazy"
-              // referrerpolicy="no-referrer-when-downgrade"s
             ></iframe>
           </div>
 
@@ -213,17 +261,18 @@ const ContactPage = () => {
             <h2 className="text-2xl font-bold mb-2">Get in Touch</h2>
             <p className="text-gray-600 mb-6">We'd love to hear from you!</p>
 
-            <form>
+            <form onSubmit={onSubmit}>
               <div className="mb-4">
                 <label className="block text-sm font-semibold" htmlFor="name">
                   Name
                 </label>
                 <input
                   id="name"
-                  name="name" // Add this
+                  name="name"
                   type="text"
                   placeholder="Enter your Name"
                   className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-2 focus:ring-indigo-400 outline-none placeholder:text-[12px] text-[13px]"
+                  required
                 />
               </div>
 
@@ -234,17 +283,18 @@ const ContactPage = () => {
                 <input
                   id="email"
                   type="email"
-                  name="email" // Added name attribute
-                  // required
+                  name="email"
                   placeholder="Enter your Email"
                   className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-2 focus:ring-indigo-400 outline-none placeholder:text-[12px] text-[13px]"
+                  required
                 />
               </div>
-              <div className="md:col-span-2">
+
+              <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700">
                   Phone Number
                 </label>
-                <div className="flex items-center border rounded-md px-4 py-2 focus-within:ring-2 focus-within:ring-indigo-500 font-plus-jakarta-sans">
+                <div className="flex items-center border rounded-md px-4 py-2 focus-within:ring-2 focus-within:ring-indigo-500">
                   <span className="text-gray-500 text-[12px]">+234</span>
                   <input
                     type="tel"
@@ -266,9 +316,9 @@ const ContactPage = () => {
                 <textarea
                   id="message"
                   placeholder="Type your Message"
-                  name="message" // Added name attribute
-                  // required
-                  className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-2 focus:ring-indigo-400 outline-none h-24 resize-none placeholder:text-[12px] text-[13px] font-plus-jakarta-sans"
+                  name="message"
+                  className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-2 focus:ring-indigo-400 outline-none h-24 resize-none placeholder:text-[12px] text-[13px]"
+                  required
                 ></textarea>
               </div>
 
@@ -276,11 +326,10 @@ const ContactPage = () => {
                 <input
                   type="checkbox"
                   id="terms"
-                  name="checkbox" // Added name attribute
+                  name="checkbox"
                   className="mr-2"
                   required
                 />
-
                 <label className="text-sm text-gray-600 lg:text-[12px]">
                   By continuing, you acknowledge and agree to our{" "}
                   <a
@@ -293,14 +342,30 @@ const ContactPage = () => {
                 </label>
               </div>
 
-              <Button className="w-full bg-green-900 text-white py-2 rounded-lg hover:bg-green-800 transition flex items-center justify-center">
-                <span className="text-sm font-semibold">Send Message</span>
+              <Button
+                type="submit"
+                disabled={loading}
+                className={`w-full bg-green-900 text-white py-2 rounded-lg transition flex items-center justify-center ${
+                  loading
+                    ? "opacity-70 cursor-not-allowed"
+                    : "hover:bg-green-800"
+                }`}
+              >
+                <span className="text-sm font-semibold">
+                  {loading ? "Sending..." : "Send Message"}
+                </span>
               </Button>
             </form>
           </div>
         </div>
       </section>
-      {/* Map Section */}
+
+      {/* Toast Container */}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        className="font-plus-jakarta-sans"
+      />
     </section>
   );
 };

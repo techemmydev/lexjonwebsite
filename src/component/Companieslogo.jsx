@@ -27,13 +27,11 @@ const Companieslogo = () => {
         {/* Text Block */}
         <div className="w-full sm:w-[318px] sm:h-[130px] sm:mb-20">
           <h1 className="text-xl sm:text-2xl font-semibold leading-8 sm:leading-10 py-3 sm:py-5">
-            Trusted by 6,300+ global companies
+            Trusted by 2000+ global companies
           </h1>
-          <p className="text-sm sm:text-xs font-normal leading-6 text-[#88918B]">
-            From fast-growing startups to Fortune 500 enterprises, our digital
-            solutions power the infrastructure of businesses across finance,
-            health, logistics, and beyond. Our partnerships are built on
-            results, trust, and tech that scales.
+          <p className="text-sm sm:text-xs font-normal leading-6 text-white">
+            We partner with businesses to deliver innovative, reliable, and
+            scalable digital solutions built on trust and results.
           </p>
         </div>
 

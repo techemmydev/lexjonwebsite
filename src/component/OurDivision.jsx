@@ -5,7 +5,6 @@ import {
   AcademicCapIcon,
   CodeBracketSquareIcon,
   CubeTransparentIcon,
-  MegaphoneIcon,
 } from "@heroicons/react/24/solid";
 
 const divisions = [
@@ -27,12 +26,6 @@ const divisions = [
       "This division focuses on innovation at the intersection of hardware and software. We provide cutting-edge services in PCB design, embedded system programming, and robotics engineering—ideal for industries seeking intelligent automation and product development.",
     icon: CubeTransparentIcon,
   },
-  {
-    name: "Creative and Digital Marketing Division",
-    description:
-      "We help brands grow through creative content and smart digital strategy. From video ads and social media designs to full-scale marketing campaigns and lead generation, we combine creativity with data-driven execution to help clients stand out and succeed online.",
-    icon: MegaphoneIcon,
-  },
 ];
 
 export default function OurDivisions() {
@@ -47,18 +40,18 @@ export default function OurDivisions() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Heading */}
-        <div className="lg:text-center max-w-3xl mx-auto mb-16 font-plus-jakarta-sans">
+        <div className="lg:text-center max-w-3xl mx-auto mb-16">
           <p className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
             Our Divisions
           </p>
           <p className="mt-4 text-lg text-gray-300">
-            Four specialized divisions, each dedicated to delivering exceptional
-            value in its field.
+            Specialized areas of expertise, each delivering exceptional value
+            and innovation.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {divisions.map((division, index) => (
             <div
               key={division.name}

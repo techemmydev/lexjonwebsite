@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import img from "../assets/img/BigRoot.png";
 import heroimage from "../assets/logo/Heroimage.jpg";
 import Button from "./Button";
 import { ReactTyped } from "react-typed";

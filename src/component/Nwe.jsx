@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 import Button from "./Button";
 import Software from "../assets/img/ware.avif";
 import digital from "../assets/img/edu.avif";
-import robotics from "../assets/img/eye.avif";
+import robotics from "../assets/img/think.png";
 
 // Service data
 const services = [

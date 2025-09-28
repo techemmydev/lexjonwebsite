@@ -23,7 +23,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="w-full flex justify-center px-4 py-12 bg-green-900">
+    <section className="w-full flex justify-center px-4 py-12 bg-green-900 font-plus-jakarta-sans">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl w-full">
         {features.map((feature, index) => (
           <div
