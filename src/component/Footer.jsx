@@ -21,45 +21,52 @@ const navigation = [
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
+  const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
 
   // ✅ Newsletter submit handler
   // ✅ Newsletter submit handler
   const handleSubscribe = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
+    setLoading(true);
+    try {
+      const formData = new FormData(event.target);
 
-    // Web3Forms required key
-    formData.append("access_key", "0a024357-1551-410a-81b1-1af78b1f5eec");
+      // Web3Forms required key
+      formData.append("access_key", "0a024357-1551-410a-8b1b-1af78b1f5eec");
 
-    // ✅ Add extra fields
-    formData.append(
-      "subject",
-      "New Subscription to CA Global Digital Company Ltd Newsletter"
-    );
-    formData.append("from_name", "CA Global Digital Company Ltd");
+      // ✅ Add extra fields
+      formData.append(
+        "subject",
+        "New Subscription to CA Global Digital Company Ltd Newsletter"
+      );
+      formData.append("from_name", "CA Global Digital Company Ltd");
 
-    // reply_to should match the subscriber's email
-    formData.append("reply_to", formData.get("email"));
+      // reply_to should match the subscriber's email
+      formData.append("reply_to", formData.get("email"));
 
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    }).then((res) => res.json());
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      }).then((res) => res.json());
 
-    if (res.success) {
-      setStatus("✅ Subscription successful! Thank you.");
-      event.target.reset();
-    } else {
-      setStatus("❌ Something went wrong. Please try again.");
+      if (res.success) {
+        toast.success("✅ Subscription successful! Thank you.");
+        event.target.reset();
+      } else {
+        toast.error("❌ Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      toast.error("⚠️ Network error. Please try again later.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -185,9 +192,10 @@ const Footer = () => {
             <div className="flex sm:justify-end mt-3">
               <Button
                 type="submit"
+                disabled={loading}
                 className="bg-green-950 text-white text-xs py-5 px-5 hover:bg-green-900 font-plus-jakarta-sans font-bold cursor-pointer w-full"
               >
-                Subscribe
+                {loading ? "Subscribing..." : "Subscribe"}
               </Button>
             </div>
           </form>

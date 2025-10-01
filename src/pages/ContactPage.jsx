@@ -76,7 +76,7 @@ const ContactPage = () => {
     const formData = new FormData(event.target);
 
     // ✅ Required Web3Forms key
-    formData.append("access_key","0a024357-1551-410a-81b1-1af78b1f5eec");
+    formData.append("access_key", "0a024357-1551-410a-8b1b-1af78b1f5eec");
 
     // ✅ Extra fields
     formData.append(
