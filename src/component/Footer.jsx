@@ -31,7 +31,7 @@ const Footer = () => {
     const formData = new FormData(event.target);
 
     // Web3Forms required key
-    formData.append("access_key", "e9c5c15d-a128-461b-8794-58c846829f33");
+    formData.append("access_key", "0a024357-1551-410a-81b1-1af78b1f5eec");
 
     // ✅ Add extra fields
     formData.append(
