@@ -9,9 +9,9 @@ import Aboutpage from "./pages/Aboutpage";
 import PagenotFound from "./pages/PagenotFound";
 
 import ServicePage from "./pages/ServicePage";
-import CareerPage from "./pages/CarrerPage";
+
 import Contactpage from "./pages/ContactPage";
-import Products from "./pages/Products";
+
 import SoftwareDevelopment from "./pages/SoftwareDevelopment";
 import Creative from "./pages/Creative";
 import EmbeddedRoboticsLanding from "./pages/EmbeddedRoboticsLanding";
@@ -60,13 +60,17 @@ const App = () => {
             <Route path="/aboutus" element={<Aboutpage />} />
             <Route path="/contact" element={<Contactpage />} />
             {/* Add more routes here */}
-            <Route path="/services" element={<ServicePage />} />
-            <Route path="/careers" element={<CareerPage />} />
-            <Route path="/product" element={<Products />} />
-            <Route
-              path="/SoftwareDevelopment"
-              element={<SoftwareDevelopment />}
-            />
+
+            {/* Services parent route */}
+            <Route path="/services" element={<ServicePage />}>
+              <Route path="fullstack" element={<SoftwareDevelopment />} />
+              {/* <Route path="robotics" element={<Robotics />} />
+          <Route path="embedded" element={<Embedded />} />
+          <Route path="software-engineering" element={<SoftwareEngineering />} />
+          <Route path="digital-literacy" element={<DigitalLiteracy />} />
+          <Route path="projects" element={<Projects />} /> */}
+            </Route>
+            <Route path="fullstack" element={<SoftwareDevelopment />} />
             <Route path="/creative" element={<Creative />} />
             <Route path="/robotics" element={<EmbeddedRoboticsLanding />} />
           </Route>

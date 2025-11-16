@@ -71,72 +71,80 @@ const Footer = () => {
   };
 
   return (
-    <footer className="text-green-950 py-10 px-6 sm:px-10 lg:px-20 font-plus-jakarta-sans">
+    <footer className="text-green-950 py-10 px-6 sm:px-10 lg:px-20 font-inter bg-[#032E15]">
       <div className="max-w-7xl mx-auto grid gap-10 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
         {/* Logo and Description */}
-        <div className="col-span-1">
+        <div className="col-span-2">
           <div className="flex items-center gap-2 mb-4">
             <img src={Logo} alt="Logo" className="h-10 w-auto" />
-            <span className="text-green-950 font-bold text-lg">
+            <span className="text-white font-bold text-lg">
               CA Global Digital
             </span>
           </div>
-          <p className="text-sm text-green-950 lg:text-xs">
+          <p className="text-sm text-white lg:text-[15px]">
             CA Global Digital Company Ltd is a multi-division technology and
             creative solutions firm committed to empowering individuals,
             businesses, and institutions through innovation, digital
             transformation, and practical tech skills.
           </p>
 
-          {/* ✅ Social Icons */}
           <div className="flex gap-4 mt-6">
+            {/* Facebook */}
             <a
               href="https://facebook.com/caglobaldigitalcompany"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-green-950 hover:text-green-500 transition"
+              className="bg-green-800 text-white p-3 rounded-[5px] hover:bg-green-700 transition"
             >
               <FaFacebookF size={20} />
             </a>
+
+            {/* Twitter */}
             <a
               href="https://twitter.com/yourhandle"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-green-950 hover:text-green-500 transition"
+              className="bg-green-800 text-white p-3 rounded-[5px] hover:bg-green-700 transition"
             >
               <FaTwitter size={20} />
             </a>
+
+            {/* LinkedIn */}
             <a
               href="https://linkedin.com/in/yourprofile"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-green-950 hover:text-green-500 transition"
+              className="bg-green-800 text-white p-3 rounded-[5px] hover:bg-green-700 transition"
             >
               <FaLinkedinIn size={20} />
             </a>
+
+            {/* Instagram */}
             <a
               href="https://www.instagram.com/caglobalsltd"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-green-950 hover:text-green-500 transition"
+              className="bg-green-800 text-white p-3 rounded-[5px] hover:bg-green-700 transition"
             >
               <FaInstagram size={20} />
             </a>
+
+            {/* WhatsApp */}
             <a
               href="https://wa.me/2348151244098?text=Welcome%20to%20CA%20Digital%20Service"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-green-950 hover:text-green-500 transition"
+              className="bg-green-800 text-white p-3 rounded-[5px] hover:bg-green-700 transition"
             >
-              <FaWhatsapp size={20} className="text-green-600" />
+              <FaWhatsapp size={20} />
             </a>
           </div>
         </div>
 
         {/* Services */}
         <div>
-          <h3 className="font-semibold text-lg mb-3">SERVICES</h3>
-          <ul className="text-[17px] space-y-2 text-green-950 lg:text-sm">
+          <h3 className="font-light text-lg mb-3 text-white">SERVICES</h3>
+          <ul className="text-[17px] space-y-2 text-white lg:text-sm">
             <li>Web Design/Development</li>
             <li>Embedded System & Robotics</li>
             <li>Software Development</li>
@@ -147,8 +155,8 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="font-semibold text-lg mb-3">QUICK LINKS</h3>
-          <ul className="text-[17px] space-y-2 text-green-950 lg:text-sm">
+          <h3 className="font-light text-lg mb-3 text-white">QUICK LINKS</h3>
+          <ul className="text-[17px] space-y-2 text-white lg:text-sm">
             {navigation.map((item, index) => (
               <li key={index}>
                 <Link
@@ -164,8 +172,8 @@ const Footer = () => {
 
         {/* Support */}
         <div>
-          <h3 className="font-semibold text-lg mb-3">SUPPORT</h3>
-          <ul className="text-[17px] space-y-2 text-green-950 lg:text-sm">
+          <h3 className="font-light text-lg mb-3 text-white">SUPPORT</h3>
+          <ul className="text-[17px] space-y-2 text-white lg:text-sm">
             <li>Help Center</li>
             <li>FAQs</li>
             <li>Terms & Conditions</li>
@@ -174,44 +182,10 @@ const Footer = () => {
         </div>
 
         {/* Newsletter */}
-        <div>
-          <h3 className="font-semibold text-lg mb-3">Newsletter</h3>
-          <p className="text-[17px] text-green-950 lg:text-sm mb-4">
-            Subscribe to our newsletter.
-          </p>
-          <form onSubmit={handleSubscribe}>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center">
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="Your Email"
-                className="px-3 py-2 w-full sm:w-auto rounded text-black bg-white outline-green-700 border border-green-700 focus:border-green-500 focus:ring-2 focus:ring-green-200 transition text-[17px] lg:text-sm"
-              />
-            </div>
-            <div className="flex sm:justify-end mt-3">
-              <Button
-                type="submit"
-                disabled={loading}
-                className="bg-green-950 text-white text-xs py-5 px-5 hover:bg-green-900 font-plus-jakarta-sans font-bold cursor-pointer w-full"
-              >
-                {loading ? "Subscribing..." : "Subscribe"}
-              </Button>
-            </div>
-          </form>
-
-          {/* ✅ Status Message */}
-          {/* Toast Container */}
-          <ToastContainer
-            position="top-right"
-            autoClose={3000}
-            className="font-plus-jakarta-sans"
-          />
-        </div>
       </div>
 
       {/* Bottom Text */}
-      <div className="mt-10 text-center text-green-950 border-t border-green-700 pt-6 text-[17px] lg:text-sm">
+      <div className="mt-10 text-center text-white border-t border-green-700 pt-6 text-[17px] lg:text-sm">
         © {currentYear} CA Globals. All rights reserved
       </div>
     </footer>

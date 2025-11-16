@@ -24,7 +24,7 @@ import { Gem, Target, ThumbsUp } from "lucide-react";
 //   },
 // ];
 
-const DiscoverOurStory = () => {
+const Whoare = () => {
   // const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
@@ -77,4 +77,4 @@ const DiscoverOurStory = () => {
   );
 };
 
-export default DiscoverOurStory;
+export default Whoare;

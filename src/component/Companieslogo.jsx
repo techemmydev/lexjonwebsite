@@ -22,19 +22,14 @@ const ArrayOfLogos = [
 
 const Companieslogo = () => {
   return (
-    <div className="w-full mx-auto px-4 lg:p-10 sm:px-0 font-plus-jakarta-sans">
-      <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-10 sm:gap-24">
-        {/* Text Block */}
-        <div className="w-full sm:w-[318px] sm:h-[130px] sm:mb-20">
-          <h1 className="text-xl sm:text-2xl font-semibold leading-8 sm:leading-10 py-3 sm:py-5">
-            Trusted by 2000+ global companies
-          </h1>
-          <p className="text-sm sm:text-xs font-normal leading-6 text-white">
-            We partner with businesses to deliver innovative, reliable, and
-            scalable digital solutions built on trust and results.
-          </p>
-        </div>
-
+    <div className="w-full mx-auto px-4 lg:p-10 sm:px-0 font-inter">
+      {/* Text Block */}
+      <div className="flex justify-center items-center flex-col">
+        <h1 className="text-xl sm:text-3xl font-bold leading-8 sm:leading-10 py-3 sm:py-5 capitalize">
+          Trusted by 2000+ Companies
+        </h1>
+      </div>
+      <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-10 sm:gap-24 ">
         {/* Logo Carousel */}
         <div className="w-full sm:w-[700px] min-h-[100px] sm:min-h-[120px]">
           <Swiper

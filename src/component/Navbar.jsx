@@ -8,15 +8,18 @@ import Button from "./Button";
 const navigation = [
   { label: "Home", path: "/" },
   { label: "About", path: "/aboutus" },
-  // {
-  //   label: "Services",
-  //   // path: "/services",
-  //   children: [
-  //     { label: "Web Development", path: "/SoftwareDevelopment" },
-  //     { label: "Creative & Digital Marketing", path: "/creative" },
-  //     { label: " Embedded Systems & Robotics Solutions", path: "/robotics" },
-  //   ],
-  // },
+  {
+    label: "Services",
+    path: "/services",
+    // children: [
+    //   { label: "Full-Stack Development", path: "/fullstack" },
+    //   { label: "Robotics & Automation", path: "/services/robotics" },
+    //   { label: "Embedded Systems", path: "/services/embedded" },
+    //   { label: "Software Engineering", path: "/services/software-engineering" },
+    //   { label: "Digital Literacy", path: "/services/digital-literacy" },
+    //   { label: "Hands-on Projects", path: "/services/projects" },
+    // ],
+  },
   // {
   //   label: "Products",
   //   // path: "/product",
@@ -34,10 +37,12 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null); // for mobile dropdowns
   const location = useLocation();
 
-  const isActive = (path) => location.pathname === path;
+  // const isActive = (path) => location.pathname === path;
+  const isActive = (path) =>
+    location.pathname === path || location.pathname.startsWith(path + "/");
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-white shadow">
+    <header className="fixed top-0 z-50 w-full bg-white shadow font-inter">
       <nav
         className="flex items-center justify-between px-4 py-4 lg:px-8"
         aria-label="Global"
