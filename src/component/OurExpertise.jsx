@@ -84,13 +84,13 @@ const ClientSection = () => {
       }).then((res) => res.json());
 
       if (res.success) {
-        toast.success("✅ Subscription successful! Thank you.");
+        toast.success("Subscription successful! Thank you.");
         event.target.reset();
       } else {
-        toast.error("❌ Something went wrong. Please try again.");
+        toast.error(" Something went wrong. Please try again.");
       }
     } catch (error) {
-      toast.error("⚠️ Network error. Please try again later.");
+      toast.error("Network error. Please try again later.");
     } finally {
       setLoading(false);
     }
@@ -111,7 +111,7 @@ const ClientSection = () => {
   const current = testimonials[index];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 font-inter">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 font-inter mt-0 lg:mt-10">
       {/* 1. Image + Text Section */}
       <section className="flex flex-col lg:flex-row items-center lg:items-start gap-10 mb-20">
         {/* Left Image */}
@@ -124,7 +124,7 @@ const ClientSection = () => {
         </div>
 
         {/* Right Text */}
-        <div className="lg:w-1/2 w-full lg:pt-6">
+        <div className="lg:w-1/2 w-full lg:pt-6 ">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 leading-tight">
             Building the Future of Software Development
           </h2>

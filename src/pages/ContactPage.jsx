@@ -105,14 +105,14 @@ const ContactPage = () => {
       const data = await res.json();
 
       if (data.success) {
-        toast.success("✅ Your message was sent successfully!");
+        toast.success("Your message was sent successfully!");
         event.target.reset();
       } else {
-        toast.error("❌ Something went wrong. Please try again.");
+        toast.error("Something went wrong. Please try again.");
       }
     } catch (error) {
       console.error("Error:", error);
-      toast.error("⚠️ Failed to send message. Check your connection.");
+      toast.error("Failed to send message. Check your connection.");
     } finally {
       setLoading(false);
     }

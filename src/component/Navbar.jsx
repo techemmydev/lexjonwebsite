@@ -130,18 +130,18 @@ export default function Navbar() {
               className="-m-1.5 p-1.5"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <img src={logo} alt="Logo" className="h-16 w-auto" />
+              <img src={logo} alt="Logo" className="h-20 w-auto" />
             </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
             >
-              <XMarkIcon className="h-8 w-8 text-white" />
+              <XMarkIcon className="h-9 w-9 text-white" />
             </button>
           </div>
 
-          <div className="mt-6 space-y-2">
+          <div className="mt-10 space-y-10">
             {navigation.map((item) => (
               <div key={item.label}>
                 <div
@@ -197,13 +197,13 @@ export default function Navbar() {
               </div>
             ))}
 
-            <Link
+            {/* <Link
               to="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className="block rounded-lg px-3 py-2 text-2xl font-semibold text-white hover:text-green-700"
             >
-              Get in touch
-            </Link>
+              Get in toucheeee
+            </Link> */}
           </div>
         </DialogPanel>
       </Dialog>

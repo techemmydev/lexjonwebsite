@@ -20,7 +20,7 @@ const Homepage = () => {
   return (
     <div>
       <Herosection />
-      <div className="-mt-40 relative z-20">
+      <div className="mt-0 relative z-20 lg:-mt-50">
         <FeatureGrid />
       </div>
       <Whoare />

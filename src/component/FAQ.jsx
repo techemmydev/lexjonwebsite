@@ -139,7 +139,7 @@ const FaqSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white py-12 font-inter">
+    <div className=" bg-white py-12 font-inter">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-[#000000] mb-8">
           Frequently Asked Questions

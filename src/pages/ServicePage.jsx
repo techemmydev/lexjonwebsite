@@ -12,7 +12,7 @@ const ServicePage = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative overflow-hidden mb-14 h-[650px] md:h-[600px] lg:h-[650px] font-inter">
+      <div className="relative overflow-hidden mb-14 h-[600px] md:h-[600px] lg:h-[650px] font-inter">
         {/* Background Image with Dark Overlay */}
         <img
           src={img}
