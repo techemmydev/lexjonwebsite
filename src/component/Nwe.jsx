@@ -4,38 +4,55 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Button from "./Button";
-import Software from "../assets/img/ware.avif";
-import digital from "../assets/img/edu.avif";
-import robotics from "../assets/img/think.png";
+
+import img1 from "../assets/img/Serviceimagess/service1.png";
+import img2 from "../assets/img/Serviceimagess/service2.png";
+import img3 from "../assets/img/Serviceimagess/service3.png";
+import img4 from "../assets/img/Serviceimagess/service4.png";
+import img5 from "../assets/img/Serviceimagess/service5.png";
+import img6 from "../assets/img/Serviceimagess/service6.png";
 
 // Service data
 const services = [
   {
-    title: "Software Development",
+    title: "Full-Stack Development",
     description:
-      "Master the art of coding through a structured journey into programming, algorithms, and software engineering best practices. Students will learn to design and build scalable applications that solve real-world problems while applying clean code principles. This program equips learners with the technical and analytical skills required to thrive in today’s fast-paced software industry.",
-    img: Software,
-    link: "/SoftwareDevelopment",
+      "Learn modern web, mobile and desktop application development using the latest frameworks, tools and best practices..",
+    img: img4,
   },
   {
-    title: "IT Education (R&C)",
+    title: "Robotics & Automation",
     description:
-      "Gain practical, hands-on experience in web, mobile, and desktop application development using modern frameworks and technologies. With a focus on research and collaboration, students are encouraged to experiment, innovate, and build solutions that address real-life challenges. This track ensures learners are job-ready with strong fundamentals and industry-relevant skills.",
-    img: digital,
-    link: "/creative",
+      "Design and program autonomous robots with sensors, actuators and intelligent decision making systems..",
+    img: img3,
   },
   {
-    title: "Embedded Systems & Robotics",
+    title: "Embedded Systems Programming",
     description:
-      "Step into the world of intelligent machines by learning how hardware and software come together in robotics and automation. Students will work with sensors, microcontrollers, and AI-driven systems to design innovative solutions that bring ideas to life. This program fosters creativity, problem-solving, and prepares future engineers for the rapidly evolving field of robotics and IoT.",
-    img: robotics,
-    link: "/robotics",
+      "Develop efficient, low level software for micro controllers and IOT devices to connect the physical and digital worlds..",
+    img: img6,
+  },
+  {
+    title: "Software Engineering Principles",
+    description:
+      "Master algorithms, data structures, and clean coding practices to build scalable and maintainable solutions.",
+    img: img1,
+  },
+  {
+    title: "Digital Literacy & IT Foundations",
+    description:
+      "Gain a strong foundation in information technology, networks, and essential digital skills for today’s workforce.",
+    img: img2,
+  },
+  {
+    title: "Hands-on Project Learning",
+    description:
+      "Apply knowledge directly through capstone projects, hackathons, and real world problem solving challenges.",
+    img: img5,
   },
 ];
 
 const EventServices = () => {
-  const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(0);
   const [loadedImages, setLoadedImages] = useState(
     Array(services.length).fill(false)
@@ -68,7 +85,7 @@ const EventServices = () => {
   };
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-10 font-plus-jakarta-sans overflow-hidden bg-green-950">
+    <section className="py-12 px-4 sm:px-6 lg:px-10 font-inter overflow-hidden bg-green-950">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <h2
@@ -104,12 +121,6 @@ const EventServices = () => {
                 <p className="text-white text-sm sm:text-base leading-relaxed mb-6 font-light">
                   {services[activeIndex].description}
                 </p>
-                <Button
-                  onClick={() => navigate(services[activeIndex].link)}
-                  className="bg-[#faad29d6] text-white px-5 py-3 text-sm font-bold hover:bg-[#b37b1e] capitalize"
-                >
-                  learn more
-                </Button>
               </div>
 
               {/* Right Image */}
@@ -128,18 +139,20 @@ const EventServices = () => {
           </AnimatePresence>
 
           {/* Prev / Next Buttons */}
-          <div className="absolute inset-y-0 left-0 lg:flex items-center hidden">
+          <div className="absolute -bottom-4 left-5 lg:flex items-center hidden">
             <button
               onClick={handlePrev}
-              className="bg-white shadow-md rounded-full p-2 hover:bg-gray-100 ml-2 sm:ml-4"
+              className="bg-white shadow-md rounded-full p-2 hover:bg-gray-100"
             >
               <ChevronLeft className="w-6 h-6 text-gray-600" />
             </button>
           </div>
-          <div className="absolute inset-y-0 right-0 lg:flex items-center hidden ">
+
+          {/* Next Button */}
+          <div className="absolute -bottom-4 right-5 lg:flex items-center hidden">
             <button
               onClick={handleNext}
-              className="bg-white shadow-md rounded-full p-2 hover:bg-gray-100 mr-2 sm:mr-4"
+              className="bg-white shadow-md rounded-full p-2 hover:bg-gray-100"
             >
               <ChevronRight className="w-6 h-6 text-gray-600" />
             </button>

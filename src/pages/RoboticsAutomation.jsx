@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import img from "../assets/img/Serviceimagess/service4.png";
+import img3 from "../assets/img/Serviceimagess/service3.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import CourseDetails from "@/component/CourseDetails";
 
-const SoftwareDevelopment = () => {
+const RoboticsAutomation = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
@@ -15,24 +15,24 @@ const SoftwareDevelopment = () => {
       <div className="relative overflow-hidden mb-14 h-[500px] md:h-[500px] lg:h-[500px]">
         {/* Background Image with Dark Overlay */}
         <img
-          src={img}
+          src={img3}
           alt="Software development background"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[#032E15BF] opacity-20"></div>
+        <div className="absolute inset-0 bg-[#032E15BF] opacity-40"></div>
 
         {/* Content Container */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center ">
           <div className=" text-white max-w-3xl">
             {/* Main Title */}
-            <h1 className="text-4xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight mb-6 leading-snug">
-              Full Stack Development
+            <h1 className="text-4xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight mb-6 leading-snug text-[#032E15]">
+              Robotics & Automation
             </h1>
 
             {/* Subtext */}
             <p className="mt-4 text-[16px]  text-gray-200 leading-relaxed">
-              Learn modern web, mobile and desktop application development using
-              the latest frameworks, tools and best practices
+              Design and program autonomous robots with sensors, actuators and
+              intelligent decision making systems.
             </p>
           </div>
         </div>
@@ -40,32 +40,30 @@ const SoftwareDevelopment = () => {
       {/* Course Details Section */}
       <CourseDetails
         introTitle="Introduction"
-        introDescription="At CA Global Digital, we don't just teach — we build. Learn full-stack development with React, Node.js, and MongoDB through real projects and industry-standard practices."
+        introDescription="We train and build automation systems that transform industries. Our Robotics program equips learners and businesses to design and implement smart, automated solutions for manufacturing, logistics, and beyond."
         sections={[
           {
             title: "What You'll Learn",
             items: [
-              "HTML, CSS, JavaScript",
-              "React and Next.js",
-              "Node.js and Express",
-              "MongoDB, APIs, Authentication",
-              "Deployment and GitHub",
+              "Robotics programming and Arduino",
+              "Motor control, sensors, and automation logic",
+              "IoT integration and embedded connectivity",
             ],
           },
           {
             title: "What We Build",
             items: [
-              "Business websites and dashboards",
-              "E-commerce systems",
-              "Internal workflow automation apps",
+              "Custom robotic prototypes",
+              "Automated production systems",
+              "IoT and remote monitoring tools",
             ],
           },
           {
             title: "Benefits",
             items: [
-              "Hands-on project-based learning",
-              "Mentorship and certification",
-              "Career and portfolio support",
+              "Industry ready skills",
+              "Automated production systemsn",
+              "IoT and remote monitoring tools",
             ],
           },
         ]}
@@ -76,4 +74,4 @@ const SoftwareDevelopment = () => {
   );
 };
 
-export default SoftwareDevelopment;
+export default RoboticsAutomation;

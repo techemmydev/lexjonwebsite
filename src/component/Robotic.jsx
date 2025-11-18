@@ -3,7 +3,14 @@ import img from "../assets/img/BigRoot.png";
 import { ReactTyped } from "react-typed";
 export default function Robotic() {
   return (
-    <section className="relative w-full bg-white py-12 px-6 md:px-16 lg:px-24 overflow-hidden">
+    <section className="relative w-full bg-white py-12 px-6 md:px-16 lg:px-24 overflow-hidden font-inter">
+      <h1 className="text-center font-bold text-black lg:text-4xl lg:mb-10 text-3xl mb-5">
+        Powering the Future of Digital Innovation
+      </h1>
+      <p className="text-center text-[#88918B] font-light mb-5">
+        Our Platform combines AI, cloud computing and secure analytics to help
+        you move faster, smarter, and safer in a digital first world.
+      </p>
       <div className="grid lg:grid-cols-2 gap-10 items-center">
         {/* Left Side - Robot Image */}
         <div className="flex justify-center">
@@ -15,7 +22,7 @@ export default function Robotic() {
         </div>
 
         {/* Right Side - Content */}
-        <div className="font-plus-jakarta-sans">
+        <div className="font-inter">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-2 leading-snug">
             <ReactTyped
               strings={[
@@ -34,12 +41,12 @@ export default function Robotic() {
             <br />
             <span className="text-green-600">with intelligent robotic AI</span>
           </h2>
-          <p className="text-gray-600 mt-4 text-base sm:text-lg leading-relaxed">
+          {/* <p className="text-gray-600 mt-4 text-base sm:text-lg leading-relaxed">
             Harness the potential of advanced automation to streamline
             operations, drive innovation, and achieve sustainable growth. Our
             AI-powered solutions adapt to your needs and help you stay ahead in
             a rapidly evolving digital world.
-          </p>
+          </p> */}
 
           {/* Features */}
           <div className="mt-8 space-y-6">

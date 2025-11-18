@@ -33,17 +33,16 @@ const Whoare = () => {
 
   return (
     <section
-      className="text-center py-12 px-4 sm:px-6 bg-white font-plus-jakarta-sans"
+      className="text-center py-12 px-4 sm:px-6 bg-white font-inter"
       data-aos="fade-up"
     >
-      <h2 className="text-2xl sm:text-3xl font-bold font-plus-jakarta-sans ">
-        WHO WE ARE
-      </h2>
-      <p className="text-gray-600 mt-2 text-base lg:text-[17px] max-w-3xl mx-auto font-plus-jakarta-sans leading-10">
+      <h2 className="text-2xl sm:text-3xl font-bold font-inter ">WHO WE ARE</h2>
+      <p className="text-gray-600 mt-2 text-base lg:text-[17px] max-w-4xl mx-auto font-inter leading-10 font-light">
         CA Global Digital Company Ltd is a multi-division technology and
         creative solutions firm committed to empowering individuals, businesses,
         and institutions through innovation, digital transformation, and
-        practical tech skills.
+        practical tech skills. We help businesses scale through reliable
+        solutions, trusted by thousands of users and industry leaders worldwide
       </p>
 
       {/* Tab Buttons */}

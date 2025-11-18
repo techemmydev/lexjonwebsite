@@ -13,8 +13,12 @@ import ServicePage from "./pages/ServicePage";
 import Contactpage from "./pages/ContactPage";
 
 import SoftwareDevelopment from "./pages/SoftwareDevelopment";
-import Creative from "./pages/Creative";
+
+import RoboticsAutomation from "./pages/RoboticsAutomation";
 import EmbeddedRoboticsLanding from "./pages/EmbeddedRoboticsLanding";
+import SoftwareEngineeringPrinciples from "./pages/SoftwareEngineeringPrinciples";
+import DigitalLiteracyITFoundations from "./pages/DigitalLiteracyITFoundations";
+import HandsonProjectLearning from "./pages/HandsonProjectLearning";
 const App = () => {
   const [scrollDirection, setScrollDirection] = useState("down");
 
@@ -60,7 +64,6 @@ const App = () => {
             <Route path="/aboutus" element={<Aboutpage />} />
             <Route path="/contact" element={<Contactpage />} />
             {/* Add more routes here */}
-
             {/* Services parent route */}
             <Route path="/services" element={<ServicePage />}>
               <Route path="fullstack" element={<SoftwareDevelopment />} />
@@ -70,9 +73,18 @@ const App = () => {
           <Route path="digital-literacy" element={<DigitalLiteracy />} />
           <Route path="projects" element={<Projects />} /> */}
             </Route>
-            <Route path="fullstack" element={<SoftwareDevelopment />} />
-            <Route path="/creative" element={<Creative />} />
-            <Route path="/robotics" element={<EmbeddedRoboticsLanding />} />
+            <Route path="/fullstack" element={<SoftwareDevelopment />} />
+            <Route path="/embedded" element={<EmbeddedRoboticsLanding />} />
+            <Route
+              path="/software-engineering"
+              element={<SoftwareEngineeringPrinciples />}
+            />
+            <Route
+              path="digital-literacy"
+              element={<DigitalLiteracyITFoundations />}
+            />
+            <Route path="projects" element={<HandsonProjectLearning />} />
+            <Route path="/robotics" element={<RoboticsAutomation />} />
           </Route>
         </Routes>
       </div>

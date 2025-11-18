@@ -14,18 +14,20 @@ import Robotic from "@/component/Robotic";
 import Backgrounoverlay from "@/component/Backgrounoverlay";
 import Whoare from "@/component/Whoare";
 import FeatureGrid from "../component/EventServices";
+import ClientSection from "@/component/OurExpertise";
 // import CoreValues from "@/component/OurcoreValue";
 const Homepage = () => {
   return (
     <div>
       <Herosection />
-      <div className="-mt-32 relative z-20">
+      <div className="-mt-40 relative z-20">
         <FeatureGrid />
       </div>
       <Whoare />
       <Stats />
       <Robotic />
       <ServiceSlides />
+      <ClientSection />
     </div>
   );
 };

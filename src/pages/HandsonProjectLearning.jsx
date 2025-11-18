@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import img from "../assets/img/Serviceimagess/service4.png";
+import img2 from "../assets/img/Serviceimagess/service2.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import CourseDetails from "@/component/CourseDetails";
 
-const SoftwareDevelopment = () => {
+const HandsonProjectLearning = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
@@ -15,7 +15,7 @@ const SoftwareDevelopment = () => {
       <div className="relative overflow-hidden mb-14 h-[500px] md:h-[500px] lg:h-[500px]">
         {/* Background Image with Dark Overlay */}
         <img
-          src={img}
+          src={img2}
           alt="Software development background"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -25,14 +25,14 @@ const SoftwareDevelopment = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center ">
           <div className=" text-white max-w-3xl">
             {/* Main Title */}
-            <h1 className="text-4xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight mb-6 leading-snug">
-              Full Stack Development
+            <h1 className="text-4xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight mb-6 leading-snug text-white">
+              Hands-on Project Learning
             </h1>
 
             {/* Subtext */}
             <p className="mt-4 text-[16px]  text-gray-200 leading-relaxed">
-              Learn modern web, mobile and desktop application development using
-              the latest frameworks, tools and best practices
+              Apply knowledge directly through capstone projects, hackathons,
+              and real world problem solving challenges.
             </p>
           </div>
         </div>
@@ -40,32 +40,30 @@ const SoftwareDevelopment = () => {
       {/* Course Details Section */}
       <CourseDetails
         introTitle="Introduction"
-        introDescription="At CA Global Digital, we don't just teach — we build. Learn full-stack development with React, Node.js, and MongoDB through real projects and industry-standard practices."
+        introDescription="We don’t just teach theory we integrate you into  real software projects. Work on live systems alongside our engineers and gain professional exposure.."
         sections={[
           {
             title: "What You'll Learn",
             items: [
-              "HTML, CSS, JavaScript",
-              "React and Next.js",
-              "Node.js and Express",
-              "MongoDB, APIs, Authentication",
-              "Deployment and GitHub",
+              "Team collaboration and version control",
+              "Agile sprints and product delivery",
+              "Code reviews and testing best practices",
             ],
           },
           {
             title: "What We Build",
             items: [
-              "Business websites and dashboards",
-              "E-commerce systems",
-              "Internal workflow automation apps",
+              "Client driven applications",
+              "Prototype and MVP systems",
+              "Open-source contributions",
             ],
           },
           {
             title: "Benefits",
             items: [
-              "Hands-on project-based learning",
-              "Mentorship and certification",
-              "Career and portfolio support",
+              "Real project participation",
+              "Career portfolio development",
+              "Direct industry mentorship",
             ],
           },
         ]}
@@ -76,4 +74,4 @@ const SoftwareDevelopment = () => {
   );
 };
 
-export default SoftwareDevelopment;
+export default HandsonProjectLearning;
