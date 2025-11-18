@@ -68,7 +68,7 @@ const HandsonProjectLearning = () => {
           },
         ]}
         ctaText="Ready to upgrade your digital skills or partner with us for your next project?"
-        ctaLink="#contact"
+        ctaLink="/contact"
       />
     </>
   );

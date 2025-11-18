@@ -89,15 +89,16 @@ const ServicesSection = () => {
         ))}
       </div>
 
-      <div className="text-center mt-12 max-w-xl mx-auto px-4">
+      <div className="text-center mt-12 max-w-xl mx-auto px-4 font-inter">
         <h2 className="text-lg sm:text-xl font-semibold">
           Ready to upgrade your digital skills or partner with us for your next
           project?
         </h2>
-
-        <Button className="mt-4 px-6 py-4 bg-green-900 text-white rounded-lg hover:bg-green-800 transition text-sm">
-          Learn More
-        </Button>
+        <Link to="/contact">
+          <Button className="mt-4 px-6 py-4 bg-green-900 text-white rounded-lg hover:bg-green-800 transition text-sm">
+            Learn More
+          </Button>
+        </Link>
       </div>
     </section>
   );
