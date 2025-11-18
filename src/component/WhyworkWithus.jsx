@@ -54,17 +54,14 @@ export default function WhyWorkWithUs() {
   }, []);
 
   return (
-    <div
-      className="bg-gray-50 py-20 sm:py-32 font-plus-jakarta-sans"
-      data-aos="fade-up"
-    >
+    <div className="bg-[#032E15] py-20 sm:py-32 font-inter" data-aos="fade-up">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Heading */}
-        <div className="lg:text-center max-w-2xl mx-auto mb-16 font-plus-jakarta-sans">
-          <p className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+        <div className="lg:text-center max-w-3xl mx-auto mb-16 font-plus-jakarta-sans">
+          <p className="text-4xl font-semibold tracking-tight text-white sm:text-4xl">
             Why Work With Us
           </p>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-lg text-white font-[300]">
             Discover the values, principles, and expertise that make CA Global
             Digital Company your ideal technology partner.
           </p>
@@ -77,13 +74,15 @@ export default function WhyWorkWithUs() {
               key={item.name}
               className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg hover:scale-[1.02] transition-transform duration-300"
             >
-              <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-500 text-white shadow-md">
+              <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-500 text-black shadow-md">
                 <item.icon className="h-6 w-6" aria-hidden="true" />
               </div>
-              <h3 className="mt-5 text-lg font-semibold text-gray-900">
+              <h3 className="mt-5 text-lg font-bold text-[#000000]">
                 {item.name}
               </h3>
-              <p className="mt-3 text-base text-gray-600">{item.description}</p>
+              <p className="mt-3 text-base text-[#88918B] font-light">
+                {item.description}
+              </p>
             </div>
           ))}
         </div>

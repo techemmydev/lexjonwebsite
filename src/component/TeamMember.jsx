@@ -9,27 +9,27 @@ const team = [
     name: "Alex Johnson",
     role: "Lead Software Engineer",
     image: image7,
-    desc: "Specializes in full-stack development and cloud solutions, with a passion for mentoring young developers and building innovative digital products.",
+    // desc: "Specializes in full-stack development and cloud solutions, with a passion for mentoring young developers and building innovative digital products.",
   },
   {
     name: "Sofia Martinez",
     role: "Creative Director",
     image: image8,
-    desc: "Expert in digital marketing, branding, and content creation, helping businesses craft compelling visual and strategic identities.",
+    // desc: "Expert in digital marketing, branding, and content creation, helping businesses craft compelling visual and strategic identities.",
   },
   {
     name: "Dr. Ethan Carter",
     role: "Robotics & AI Specialist",
     image: image9,
-    desc: "Focused on robotics programming, AI-driven automation, and inspiring the next generation of engineers to think beyond limits.",
+    // desc: "Focused on robotics programming, AI-driven automation, and inspiring the next generation of engineers to think beyond limits.",
   },
 ];
 
 export default function TeamMember() {
   return (
-    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8 font-plus-jakarta-sans">
+    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8 font-inter">
       <div className="max-w-5xl mx-auto text-center mb-14">
-        <h2 className="text-3xl sm:text-4xl font-bold text-emerald-700 mb-2">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#000000] mb-2">
           Meet Our Experts
         </h2>
         <p className="text-gray-600 max-w-xl mx-auto">
@@ -50,17 +50,32 @@ export default function TeamMember() {
             <h3 className="text-xl font-semibold text-gray-900">
               {person.name}
             </h3>
-            <p className="text-emerald-600 font-medium mb-3">{person.role}</p>
+            <p className="text-[#88918B] font-medium mb-3">{person.role}</p>
             <p className="text-sm text-gray-600 mb-4">{person.desc}</p>
-            <div className="flex justify-center space-x-4 text-emerald-600 text-sm">
-              <a href="#">
-                <FaFacebookF />
+            <div className="flex justify-center space-x-4">
+              {/* Facebook */}
+              <a
+                href="#"
+                className="bg-[#032E15] text-white p-4 rounded-[5px]   border-transparent hover:bg-emerald-700 transition"
+              >
+                <FaFacebookF className="w-4 h-4" />
               </a>
-              <a href="#">
-                <FaTwitter />
+
+              {/* Twitter */}
+              <a
+                href="#"
+                className="bg-[#032E15] text-white p-4 rounded-[5px]  border-transparent hover:bg-emerald-700 transition"
+              >
+                <FaTwitter className="w-4 h-4" />
               </a>
-              <a href="#">
-                <FaLinkedinIn />
+
+              {/* LinkedIn */}
+              <a
+                href="#"
+                c
+                className="bg-[#032E15] text-white p-4 rounded-[5px]   border-transparent hover:bg-emerald-700 transition"
+              >
+                <FaLinkedinIn className="w-4 h-4" />
               </a>
             </div>
           </div>

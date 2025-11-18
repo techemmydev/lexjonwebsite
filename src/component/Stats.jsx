@@ -17,10 +17,10 @@ export default function Stats() {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-b from-white to-gray-50 py-20 sm:py-28 lg:py-20 font-plus-jakarta-sans">
+    <section className="relative bg-gradient-to-b from-white to-gray-50 py-10 sm:py-28 lg:py-10 font-inter">
       <div className="mx-auto max-w-7xl px-6 lg:px-8" data-aos="fade-up">
         {/* Heading */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <h1 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl font-plus-jakarta-sans">
             Our Impact in the Digital World
           </h1>
@@ -28,10 +28,10 @@ export default function Stats() {
             We help businesses scale through reliable solutions, trusted by
             thousands of users and industry leaders worldwide.
           </p>
-        </div>
+        </div> */}
 
         {/* Stats Grid */}
-        <dl className="grid grid-cols-1 gap-x-12 gap-y-16 text-center sm:grid-cols-2 lg:grid-cols-3">
+        <dl className="grid grid-cols-1 gap-x-10 gap-y-10 text-center sm:grid-cols-2 lg:grid-cols-3">
           {stats.map((stat) => {
             const { ref, inView } = useInView({ triggerOnce: true });
             const Icon = stat.icon;
@@ -40,21 +40,21 @@ export default function Stats() {
               <div
                 key={stat.id}
                 ref={ref}
-                className="flex flex-col items-center gap-y-4 p-8 rounded-2xl shadow-md bg-white hover:shadow-xl transition duration-300"
+                className="flex flex-col items-center gap-y-4 p-8  transition duration-300"
               >
                 {/* Icon */}
-                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600">
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white text-black">
                   <Icon className="w-8 h-8" />
                 </div>
 
                 {/* Stat Number */}
-                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                <dd className="order-first text-3xl font-semibold tracking-tight text-black sm:text-5xl">
                   {inView ? (
                     <CountUp
                       end={stat.value}
                       duration={2}
                       suffix="+"
-                      className="font-plus-jakarta-sans"
+                      className="font-inter"
                     />
                   ) : (
                     "0"
